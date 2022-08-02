@@ -6,7 +6,7 @@ public class Supply : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-         if( collision.gameObject.TryGetComponent(out PlayerShoot shoot))
+         if( collision.gameObject.TryGetComponent(out ShootController shoot))
          {
               shoot.Reload();
               Destroy(gameObject);

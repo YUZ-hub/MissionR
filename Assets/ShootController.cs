@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
-public class PlayerShoot : MonoBehaviour
+public class ShootController : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform shootPoint;
@@ -35,7 +35,6 @@ public class PlayerShoot : MonoBehaviour
     {
         if( bulletNum <= 0)
         {
-            Debug.Log("No charges");
             return;
         }
         GameObject bullet = bulletPool.Dequeue();
