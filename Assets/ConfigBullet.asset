@@ -17,3 +17,4 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 64
+  hitParticlePrefab: {fileID: 8932494539528139803, guid: b44c5d92552e5764581f36d370116895, type: 3}

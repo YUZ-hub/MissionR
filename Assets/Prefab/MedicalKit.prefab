@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211bcd6c3dce62c45b1c3c9050c883b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healParticle: {fileID: 0}
+  healParticlePrefab: {fileID: 3425476578700580806, guid: ab897dcd369cfc14c82d3829d0d4cf14, type: 3}
