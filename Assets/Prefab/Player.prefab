@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 5884775339669348339}
   - component: {fileID: 5884775339669348336}
   - component: {fileID: 5884775339669348349}
-  - component: {fileID: 5923525511704761940}
   - component: {fileID: 1260690341}
+  - component: {fileID: 3086093837728948522}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -158,21 +158,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &5923525511704761940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884775339669348337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f38b1f4cb24d4469d0880d47da5c57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1040749509652208901, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
-  shootPoint: {fileID: 3373897707106807072}
-  bulletPoolSize: 10
 --- !u!58 &1260690341
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -189,6 +174,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &3086093837728948522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884775339669348337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14ec03b59e855647a4e6f408858de08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1274496162902075248, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
+  shootPoint: {fileID: 3373897707106807072}
+  bulletPoolSize: 10
 --- !u!1 &5884775341344485687
 GameObject:
   m_ObjectHideFlags: 0

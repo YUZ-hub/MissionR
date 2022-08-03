@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -207,6 +208,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47aa0bd8174805d448f78c744bd89061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  magnitude: 0.1
 --- !u!1 &1213251204 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5884775339669348337, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
@@ -224,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2a64a8a327db49a1b4dcaa991d664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 0
+  maxHp: 100
 --- !u!1 &1841363198
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magazinePrefab: {fileID: 8460000527990523730, guid: 3fbed0c5a6c303c4ea835ea9b37d6548, type: 3}
-  medicalKitPrefab: {fileID: 6870390841780414838, guid: 3db7813c48bdbf74188b830384a0e64c, type: 3}
+  medicalKitPrefab: {fileID: 6878178447466394142, guid: 3db7813c48bdbf74188b830384a0e64c, type: 3}
   cam: {fileID: 519420031}
   supplyDrop: {fileID: 11400000, guid: c43c0278dd0237a4e956ebfd421ff403, type: 2}
 --- !u!4 &1841363200
@@ -337,6 +352,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3086093837728948522, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1013141507077622591, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
     - target: {fileID: 5884775339669348336, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: cam
       value: 
@@ -389,5 +408,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5923525511704761940, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}

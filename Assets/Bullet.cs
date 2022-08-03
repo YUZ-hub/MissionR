@@ -6,7 +6,12 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private BulletConfig config;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private GameObject particlePrefab;
+    private CameraShake camShake;
+
+    private void Start()
+    {
+        Camera.main.TryGetComponent(out camShake);
+    }
 
     private void OnEnable()
     {
@@ -23,7 +28,8 @@ public class Bullet : MonoBehaviour
             if(collider.gameObject.TryGetComponent(out Health health))
             {
                 health.TakeDamage(config.Damage);
-                Instantiate(particlePrefab, transform.position, Quaternion.identity);
+                camShake.Shake();
+                //play particle
                 gameObject.SetActive(false);
             }     
         }
