@@ -6,12 +6,13 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
     [SerializeField] private Camera cam;
-    [SerializeField] private Rigidbody2D rb;
 
     private Vector2 destination, mousePos;
+    private Rigidbody2D rb;
 
     private void Start()
     {
+        TryGetComponent(out rb);
         destination = transform.position;
     }
 

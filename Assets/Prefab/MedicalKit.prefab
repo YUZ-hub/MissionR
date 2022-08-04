@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healParticlePrefab: {fileID: 3425476578700580806, guid: ab897dcd369cfc14c82d3829d0d4cf14, type: 3}
+  healSound: {fileID: 11400000, guid: 7d7ca1b09d7e9494984b6746223e67f3, type: 2}

@@ -9,12 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba668ceaf6914645a8a4da8ce29cdb7, type: 3}
-  m_Name: ConfigBullet
+  m_Script: {fileID: 11500000, guid: f1d5986d1132a35489f729990c6bfc4e, type: 3}
+  m_Name: S_Shoot
   m_EditorClassIdentifier: 
-  damage: 10
-  force: 2000
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  hitParticlePrefab: {fileID: 8932494539528139803, guid: b44c5d92552e5764581f36d370116895, type: 3}
+  clip: {fileID: 8300000, guid: 9db176e1ad4d89647a0bbcbd8b28693b, type: 3}
+  volume: 1
+  pitch: 1
+  loop: 0
+  source: {fileID: 0}

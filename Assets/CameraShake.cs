@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
     [SerializeField] private float duration, magnitude;
-
+    [SerializeField] private AnimationCurve curve;
     public void Shake()
     {
         StartCoroutine(ShakeCoroutine());
@@ -17,8 +16,9 @@ public class CameraShake : MonoBehaviour
         float time = 0f;
         while( time < duration )
         {
-            float shakeX = Random.Range(-1f, 1f) * magnitude;
-            float shakeY = Random.Range(-1f, 1f) * magnitude;
+            float finalMagnitude = magnitude * curve.Evaluate(time / duration);
+            float shakeX = Random.Range(-1f, 1f) * finalMagnitude;
+            float shakeY = Random.Range(-1f, 1f) * finalMagnitude;
             transform.position = new Vector3(originalPos.x+shakeX,originalPos.y+shakeY,originalPos.z);
             time += Time.deltaTime;
             yield return null;

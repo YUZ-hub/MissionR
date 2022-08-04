@@ -138,4 +138,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 4b9c0ae2dbdcc3541bfa04082c6717d3, type: 2}
   rb: {fileID: 8789360384552723671}
-  camShake: {fileID: 0}
+  hitSound: {fileID: 11400000, guid: 26196b449c0d5cf4fb32b67af4b3b3a2, type: 2}

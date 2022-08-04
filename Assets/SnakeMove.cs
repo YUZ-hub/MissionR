@@ -5,13 +5,14 @@ using UnityEngine;
 public class SnakeMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private LayerMask supplyLayer, playerLayer;
 
+    private Rigidbody2D rb;
     private Transform targetTransform;
 
     private void Start()
     {
+        TryGetComponent(out rb);
         LocatePlayer();
     }
     private void FixedUpdate()
@@ -30,7 +31,7 @@ public class SnakeMove : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
     }
-    private void LocatePlayer()
+    public void LocatePlayer()
     {
         Collider2D hit = Physics2D.OverlapCircle(transform.position, 100f , playerLayer);
         targetTransform = hit.transform;

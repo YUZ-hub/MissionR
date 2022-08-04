@@ -6,12 +6,12 @@ using UnityEngine;
 public class BulletConfig : ScriptableObject
 {
     [SerializeField] private int damage;
-    [SerializeField] private float speed;
+    [SerializeField] private float force;
     [SerializeField] private LayerMask targetLayer;
     [SerializeField] private ParticleSystem hitParticlePrefab;
 
     public int Damage { get { return damage; } private set { value = damage; } }
-    public float Speed { get { return speed; } private set { value = speed; } }
+    public float Force { get { return force; } private set { value = force; } }
     public LayerMask TargetLayer { get { return targetLayer; } private set { value = targetLayer; } }
     public ParticleSystem HitParticlePrefab { get { return hitParticlePrefab; } private set { value = hitParticlePrefab; } }
 

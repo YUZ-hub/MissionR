@@ -5,6 +5,7 @@ using UnityEngine;
 public class MedicalKit : MonoBehaviour
 {
     [SerializeField] private ParticleSystem healParticlePrefab;
+    [SerializeField] private Sound healSound;
     private ParticleSystem healParticle;
 
     private void Start()
@@ -18,6 +19,7 @@ public class MedicalKit : MonoBehaviour
         if ( collision.TryGetComponent(out Health health))
         {
             health.Heal(50);
+            healSound.source.Play();
             healParticle.transform.position = transform.position;
             healParticle.Play();
             Destroy(gameObject);

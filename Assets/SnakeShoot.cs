@@ -4,12 +4,75 @@ using UnityEngine;
 
 public class SnakeShoot : ShootController
 {
-    protected override void Shoot()
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] private int bulletPoolSize;
+    [SerializeField] private Sound reloadSound, shootSound;
+    [SerializeField] private float shootCd, aimTime;
+
+    private Queue<GameObject> bulletPool;
+    private int bulletNum;
+    private bool isCd = false;
+    private bool isAiming = false;
+
+    private void Start()
     {
-        
+        bulletPool = new Queue<GameObject>();
+        for (int i = 0; i < bulletPoolSize; i++)
+        {
+            GameObject obj = Instantiate(bulletPrefab);
+            bulletPool.Enqueue(obj);
+            obj.SetActive(false);
+        }
+        bulletNum = bulletPoolSize;
     }
-    public override void Reload()
+
+    private void Update()
     {
-        
+        if( isCd || isAiming )
+        {
+            return;
+        }
+        if( bulletNum > 0)
+        {
+            StartCoroutine(AimAndShoot());
+        }
+    }
+    override protected void Shoot()
+    {
+        if (bulletNum <= 0 || isCd)
+        {
+            return;
+        }
+        shootSound.source.Play();
+        GameObject bullet = bulletPool.Dequeue();
+        bullet.gameObject.transform.position = shootPoint.position;
+        bullet.gameObject.transform.rotation = transform.rotation;
+        bullet.SetActive(true);
+        bulletPool.Enqueue(bullet);
+        bulletNum -= 1;
+        isCd = true;
+        StartCoroutine(WaitCd());
+    }
+    override public void Reload()
+    {
+        reloadSound.source.Play();
+        foreach (GameObject bullet in bulletPool)
+        {
+            bullet.SetActive(false);
+        }
+        bulletNum = bulletPoolSize;
+    }
+    IEnumerator AimAndShoot()
+    {
+        isAiming = true;
+        yield return new WaitForSeconds(aimTime);
+        Shoot();
+        isAiming = false;
+    }
+    IEnumerator WaitCd()
+    {
+        yield return new WaitForSeconds(shootCd);
+        isCd = false;
     }
 }
