@@ -9,11 +9,11 @@ public class SnakeMove : MonoBehaviour
 
     private Rigidbody2D rb;
     private Transform targetTransform;
+    private Vector3 direction;
 
     private void Start()
     {
         TryGetComponent(out rb);
-        LocatePlayer();
     }
     private void FixedUpdate()
     {
@@ -21,15 +21,19 @@ public class SnakeMove : MonoBehaviour
         {
             LocatePlayer();
         }
+        direction = (targetTransform.position - transform.position).normalized;
+        Rotate();
         Move();
     }
-    private void Move()
-    {
-        Vector2 direction = (targetTransform.position - transform.position).normalized;
-        rb.MovePosition((Vector2)transform.position + speed*Time.fixedDeltaTime*direction);
+    private void Rotate()
+    {       
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, rotateSpeed);
+    }
+    private void Move()
+    {
+        rb.MovePosition(transform.position+speed*Time.deltaTime*direction);
     }
     public void LocatePlayer()
     {
@@ -41,5 +45,4 @@ public class SnakeMove : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, 100f, supplyLayer);
         targetTransform = hit.transform;
     }
-
 }

@@ -6,14 +6,13 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private BulletConfig config;
     [SerializeField] private Sound hitSound;
-
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
+    
     private CameraShake camShake;
     private ParticleSystem hitParticle;
 
     private void Start()
     {
-        TryGetComponent(out rb);
         Camera.main.TryGetComponent(out camShake);
         hitParticle = Instantiate(config.HitParticlePrefab);
     }

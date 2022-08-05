@@ -253,9 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36d7038a99005f48bd57feebb38d4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  rotateSpeed: 20
-  rb: {fileID: 355642474673275346}
+  speed: 2
+  rotateSpeed: 10
   supplyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -352,14 +351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6ee808a2b66604794d2b884390e287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1013141507077622591, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
-  shootPoint: {fileID: 2806345373303171483}
-  bulletPoolSize: 10
-  reloadSound: {fileID: 11400000, guid: 6679c90994738c64bbed2f025a88f781, type: 2}
-  shootSound: {fileID: 11400000, guid: d66e0a9ca7dc63f40920465e6245b32f, type: 2}
-  shootCd: 3
-  aimTime: 2
-  rb: {fileID: 355642474673275346}
 --- !u!1 &355642474872502012
 GameObject:
   m_ObjectHideFlags: 0
