@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &148398141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 148398143}
+  - component: {fileID: 148398142}
+  m_Layer: 0
+  m_Name: GunObjPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &148398142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148398141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ec5cc5192b3e949b0a97d45941f057, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunPoolInfos:
+  - gunPrefab: {fileID: 6049000192402721911, guid: 5667d97eaab78ec489b8e1a678862f75, type: 3}
+    gunNums: 2
+--- !u!4 &148398143
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148398141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.4776757, y: -0.24627781, z: -0.08463375}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +465,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3086093837728948522, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
+      propertyPath: testType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5884775339669348336, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: cam
       value: 
