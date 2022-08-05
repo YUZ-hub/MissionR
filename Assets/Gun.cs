@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Gun : MonoBehaviour
 {
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GunConfig config;
+    public GunConfig Config { get { return config; } set { value = config; } }
 
     private Queue<GameObject> bulletPool;
     private int bulletNum;

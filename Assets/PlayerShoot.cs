@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerShoot : ShootController
 {
     [SerializeField] private Transform gunTransform;
-    [SerializeField] private Gun gun;
+    public GunType testType;
+    private Gun gun;
 
     private void Start()
     {
-        PickUp(gun);
+        PickUp(testType);
     }
 
     private void Update()
@@ -27,11 +28,14 @@ public class PlayerShoot : ShootController
     {
         gun.Reload();
     }
-    public void PickUp(Gun _gun)
+    public void PickUp(GunType type)
     {
-        Gun obj = Instantiate(_gun);       
-        obj.transform.SetParent(gunTransform);
-        obj.transform.localPosition = Vector3.zero;
-        gun = obj;
+        if( gun != null)
+        {
+            ObjPoolController.Instance.Release(gun);
+        }
+        gun = ObjPoolController.Instance.Get(type);
+        gun.transform.SetParent(gunTransform);
+        gun.transform.localPosition = Vector3.zero;
     }
 }
