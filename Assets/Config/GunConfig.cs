@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName ="New Weapon",menuName ="Config/Weapon")]
-public class WeaponConfig : ScriptableObject
+public class GunConfig : ScriptableObject
 {
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private int magazineSize;

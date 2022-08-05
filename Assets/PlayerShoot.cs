@@ -4,64 +4,34 @@ using UnityEngine;
 
 public class PlayerShoot : ShootController
 {
-    [SerializeField] private Transform shootPoint;
-    [SerializeField] private WeaponConfig config;
-    
-    private Queue<GameObject> bulletPool;
-    private int bulletNum;
-    private bool isCD = false;
+    [SerializeField] private Transform gunTransform;
+    [SerializeField] private Gun gun;
 
     private void Start()
     {
-        bulletPool = new Queue<GameObject>();
-        for (int i = 0; i < config.MagazineSize; i++)
-        {
-            GameObject obj = Instantiate(config.BulletPrefab);
-            bulletPool.Enqueue(obj);
-            obj.SetActive(false);
-        }
-        bulletNum = config.MagazineSize;
+        PickUp(gun);
     }
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && isCD == false )
+        if (Input.GetMouseButton(0) )
         {
-            Shoot();
+            Trigger();
         }
     }
-    override protected void Shoot()
+    override protected void Trigger()
     {
-        if ( bulletNum <= 0 || isCD )
-        {
-            if (config.EmptySound.source.isPlaying == false)
-            {
-                config.EmptySound.source.Play();
-            }
-            return;
-        }
-        config.ShootSound.source.Play();
-        GameObject bullet = bulletPool.Dequeue();
-        bullet.gameObject.transform.position = shootPoint.position;
-        bullet.gameObject.transform.rotation = transform.rotation;
-        bullet.SetActive(true);
-        bulletPool.Enqueue(bullet);
-        bulletNum -= 1;
-        isCD = true;
-        StartCoroutine(WaitCd());
+        gun.Shoot();
     }
     override public void Reload()
     {
-        config.ReloadSound.source.Play();
-        foreach (GameObject bullet in bulletPool)
-        {
-            bullet.SetActive(false);
-        }
-        bulletNum = config.MagazineSize;
+        gun.Reload();
     }
-    IEnumerator WaitCd()
+    public void PickUp(Gun _gun)
     {
-        yield return new WaitForSeconds(config.ShootCD);
-        isCD = false;
+        Gun obj = Instantiate(_gun);       
+        obj.transform.SetParent(gunTransform);
+        obj.transform.localPosition = Vector3.zero;
+        gun = obj;
     }
 }

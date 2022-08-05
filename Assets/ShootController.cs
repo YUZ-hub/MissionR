@@ -5,6 +5,6 @@ using UnityEngine.Pool;
 
 abstract public class ShootController : MonoBehaviour
 {
-    abstract protected void Shoot();
+    abstract protected void Trigger();
     abstract public void Reload();
 }
