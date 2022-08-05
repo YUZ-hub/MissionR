@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private BulletConfig config;
-    [SerializeField] private Sound hitSound;
     [SerializeField] private Rigidbody2D rb;
     
     private CameraShake camShake;
@@ -29,7 +28,7 @@ public class Bullet : MonoBehaviour
     { 
         if(collider.gameObject.TryGetComponent(out Health health))
         {
-            hitSound.source.Play();
+            config.HitSound.source.Play();
             health.TakeDamage(config.Damage);
             camShake.Shake();
             hitParticle.transform.position = transform.position;

@@ -4,63 +4,64 @@ using UnityEngine;
 
 public class PlayerShoot : ShootController
 {
-    [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private Transform shootPoint;
-    [SerializeField] private int bulletPoolSize;
-    [SerializeField] private Sound reloadSound, shootSound;
-    [SerializeField] private float shootCd;
-
+    [SerializeField] private WeaponConfig config;
+    
     private Queue<GameObject> bulletPool;
     private int bulletNum;
-    private bool isCd = false;
+    private bool isCD = false;
 
     private void Start()
     {
         bulletPool = new Queue<GameObject>();
-        for (int i = 0; i < bulletPoolSize; i++)
+        for (int i = 0; i < config.MagazineSize; i++)
         {
-            GameObject obj = Instantiate(bulletPrefab);
+            GameObject obj = Instantiate(config.BulletPrefab);
             bulletPool.Enqueue(obj);
             obj.SetActive(false);
         }
-        bulletNum = bulletPoolSize;
+        bulletNum = config.MagazineSize;
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0) && isCD == false )
         {
             Shoot();
         }
     }
     override protected void Shoot()
     {
-        if ( bulletNum <= 0 || isCd )
+        if ( bulletNum <= 0 || isCD )
         {
+            if (config.EmptySound.source.isPlaying == false)
+            {
+                config.EmptySound.source.Play();
+            }
             return;
         }
-        shootSound.source.Play();
+        config.ShootSound.source.Play();
         GameObject bullet = bulletPool.Dequeue();
         bullet.gameObject.transform.position = shootPoint.position;
         bullet.gameObject.transform.rotation = transform.rotation;
         bullet.SetActive(true);
         bulletPool.Enqueue(bullet);
         bulletNum -= 1;
-        isCd = true;
+        isCD = true;
         StartCoroutine(WaitCd());
     }
     override public void Reload()
     {
-        reloadSound.source.Play();
+        config.ReloadSound.source.Play();
         foreach (GameObject bullet in bulletPool)
         {
             bullet.SetActive(false);
         }
-        bulletNum = bulletPoolSize;
+        bulletNum = config.MagazineSize;
     }
     IEnumerator WaitCd()
     {
-        yield return new WaitForSeconds(shootCd);
-        isCd = false;
+        yield return new WaitForSeconds(config.ShootCD);
+        isCD = false;
     }
 }
