@@ -9,9 +9,9 @@ public class GunPoolInfo
     public int gunNums;
 }
 
-public class ObjPoolController : MonoBehaviour
+public class GunPoolController : MonoBehaviour
 {
-    static public ObjPoolController Instance;
+    static public GunPoolController Instance;
     [SerializeField] GunPoolInfo[] gunPoolInfos;
 
     public Dictionary<GunType,ObjectPool<Gun>> gunDictionary;

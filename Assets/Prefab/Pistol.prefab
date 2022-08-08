@@ -130,4 +130,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootPoint: {fileID: 8383951335634708044}
-  config: {fileID: 11400000, guid: 9ef9e87f79b9ddb429a9df6a9ca7baf2, type: 2}
+  config: {fileID: 11400000, guid: 1f732041312521b49baef9da257b7431, type: 2}

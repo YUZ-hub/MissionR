@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
 
     private Queue<GameObject> bulletPool;
     private int bulletNum;
-    private bool isCD = false;
+    public bool isCD { get; private set; } = false;
 
     private void OnEnable()
     {

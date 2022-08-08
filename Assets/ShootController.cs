@@ -1,10 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
-abstract public class ShootController : MonoBehaviour
+public class ShootController : MonoBehaviour
 {
-    abstract protected void Trigger();
-    abstract public void Reload();
+    [SerializeField] private Transform gunTransform;
+    public GunType testType;
+    private Gun gun;
+
+    private void Start()
+    {
+        PickUp(testType);
+    }
+
+    private void Update()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Trigger();
+        }
+    }
+    public void Trigger()
+    {
+        if ( gun != null && gun.isCD ==false )
+            gun.Shoot();
+    }
+    public void Reload()
+    {
+        if (gun != null)
+            gun.Reload();
+    }
+    public void PickUp(GunType type)
+    {
+        if (gun != null)
+        {
+            GunPoolController.Instance.Release(gun);
+        }
+        gun = GunPoolController.Instance.Get(type);
+        gun.transform.SetParent(gunTransform);
+        gun.transform.localPosition = Vector3.zero;
+    }
 }
