@@ -261,6 +261,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  rb: {fileID: 355642474673275346}
 --- !u!50 &355642474673275346
 Rigidbody2D:
   serializedVersion: 4

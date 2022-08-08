@@ -6,15 +6,11 @@ public class BossMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
     [SerializeField] private LayerMask supplyLayer, playerLayer;
-
-    private Rigidbody2D rb;
+    [SerializeField] private Rigidbody2D rb;
+    
     private Transform targetTransform;
     private Vector3 direction;
 
-    private void Start()
-    {
-        TryGetComponent(out rb);
-    }
     private void FixedUpdate()
     {
         if( targetTransform == null || Vector2.Distance(targetTransform.position,transform.position)<.1f )

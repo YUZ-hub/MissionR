@@ -284,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 0.5
-  magnitude: 0.1
+  magnitude: 0.2
   curve:
     serializedVersion: 2
     m_Curve:
@@ -373,7 +373,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 355642474673275357, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
   m_PrefabInstance: {fileID: 355642475210961850}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1357979963
+--- !u!114 &1357979964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -382,11 +382,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1357979955}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f38b1f4cb24d4469d0880d47da5c57, type: 3}
+  m_Script: {fileID: 11500000, guid: 816074321faba7248b50a6363578d732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunTransform: {fileID: 0}
-  testType: 0
+  shootController: {fileID: 0}
+  bossMove: {fileID: 0}
 --- !u!1 &1841363198
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,10 +488,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275357, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_Name
-      value: Snake
+      value: Boss
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6931665147084667562, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
 --- !u!1001 &5884775339704569125
 PrefabInstance:
