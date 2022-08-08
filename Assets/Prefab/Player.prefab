@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5884775339669348336}
   - component: {fileID: 5884775339669348349}
   - component: {fileID: 1260690341}
-  - component: {fileID: 3086093837728948522}
   - component: {fileID: 1213251210}
+  - component: {fileID: 7872255425336129403}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -143,20 +143,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &3086093837728948522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884775339669348337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e14ec03b59e855647a4e6f408858de08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gunTransform: {fileID: 6611999507194070118}
-  gun: {fileID: 6049000192402721911, guid: 5667d97eaab78ec489b8e1a678862f75, type: 3}
 --- !u!114 &1213251210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,6 +156,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+--- !u!114 &7872255425336129403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884775339669348337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f38b1f4cb24d4469d0880d47da5c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunTransform: {fileID: 6611999507194070118}
+  testType: 0
 --- !u!1 &5884775341344485687
 GameObject:
   m_ObjectHideFlags: 0

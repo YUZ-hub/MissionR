@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Bullet : MonoBehaviour
 {
@@ -7,16 +8,18 @@ public class Bullet : MonoBehaviour
     
     private CameraShake camShake;
     private ParticleSystem hitParticle;
+    public BulletConfig Config { get { return config; } private set { value = config; } }
+    public Rigidbody2D Rb { get { return rb; } private set { value = rb; } }
 
-    private void Start()
+    public void Initial()
     {
-        Camera.main.TryGetComponent(out camShake);
+        Camera.main.TryGetComponent(out camShake);    
         hitParticle = Instantiate(config.HitParticlePrefab);
     }
 
     private void OnEnable()
     {
-        rb.AddForce(transform.right*config.Force);
+        StartCoroutine(AutoRelease());
     }
     private void OnDisable()
     {
@@ -31,7 +34,12 @@ public class Bullet : MonoBehaviour
             camShake.Shake();
             hitParticle.transform.position = transform.position;
             hitParticle.Play();
-            gameObject.SetActive(false);
+            BulletPoolController.Instance.Release(this);
         }     
+    }
+    IEnumerator AutoRelease()
+    {
+        yield return new WaitForSeconds(15f);
+        BulletPoolController.Instance.Release(this);
     }
 }

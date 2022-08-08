@@ -6,15 +6,15 @@ using System.Collections.Generic;
 public class GunPoolInfo
 {
     public Gun gunPrefab;
-    public int gunNums;
+    public int gunNum;
 }
 
 public class GunPoolController : MonoBehaviour
 {
     static public GunPoolController Instance;
-    [SerializeField] GunPoolInfo[] gunPoolInfos;
+    [SerializeField] private GunPoolInfo[] gunPoolInfos;
 
-    public Dictionary<GunType,ObjectPool<Gun>> gunDictionary;
+    public Dictionary<GunConfig.Type,ObjectPool<Gun>> gunDictionary;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class GunPoolController : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        gunDictionary = new Dictionary<GunType, ObjectPool<Gun>>();
+        gunDictionary = new Dictionary<GunConfig.Type, ObjectPool<Gun>>();
         foreach( GunPoolInfo poolInfo in gunPoolInfos)
         {
             ObjectPool<Gun> pool = new ObjectPool<Gun>(() =>
@@ -40,15 +40,15 @@ public class GunPoolController : MonoBehaviour
             }, (gun) =>
             {
                 Destroy(gun.gameObject);
-            }, true, poolInfo.gunNums, poolInfo.gunNums);
-            gunDictionary.Add(poolInfo.gunPrefab.Config.Type, pool);
+            }, true, poolInfo.gunNum, poolInfo.gunNum);
+            gunDictionary.Add(poolInfo.gunPrefab.Config.GunType, pool);
         }
     }
     public void Release(Gun gun)
     {
-        gunDictionary[gun.Config.Type].Release(gun);
+        gunDictionary[gun.Config.GunType].Release(gun);
     }
-    public Gun Get(GunType type)
+    public Gun Get(GunConfig.Type type)
     {
         return gunDictionary[type].Get();
     }

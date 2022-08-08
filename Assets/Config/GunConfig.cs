@@ -2,15 +2,17 @@ using UnityEngine;
 
 
 [System.Serializable]
-public enum GunType
-{
-    pistol, rocket
-}
-[CreateAssetMenu(fileName ="New Gun",menuName ="Config/Gun")]
+
+[CreateAssetMenu(fileName = "New Gun", menuName = "Config/Gun")]
 public class GunConfig : ScriptableObject
 {
+    public enum Type
+    {
+        pistol, rocket
+    }
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private GunType type;
+    [SerializeField] private Type gunType;
+    [SerializeField] private BulletConfig.Type bulletType;
     [SerializeField] private int magazineSize;
     [SerializeField] private Sound reloadSound;
     [SerializeField] private Sound shootSound;
@@ -23,5 +25,6 @@ public class GunConfig : ScriptableObject
     public Sound ShootSound { get { return shootSound; } private set { value = shootSound; } }
     public Sound EmptySound { get { return emptySound; } private set { value = emptySound; } }
     public float ShootCD { get { return shootCD; } private set { value = shootCD; } }
-    public GunType Type { get { return type; } private set { value = type; } }
+    public Type GunType { get { return gunType; } private set { value = gunType; } }
+    public BulletConfig.Type BulletType { get { return bulletType; } private set {value = bulletType; } }
 }

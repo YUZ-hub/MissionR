@@ -7,31 +7,14 @@ public class Gun : MonoBehaviour
 {
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GunConfig config;
+
     public GunConfig Config { get { return config; } set { value = config; } }
-
-    private Queue<GameObject> bulletPool;
-    private int bulletNum;
     public bool isCD { get; private set; } = false;
+    private int bulletNum;
 
-    private void OnEnable()
-    {
-        InitBullet();
-    }
-
-    private void InitBullet()
-    {
-        bulletPool = new Queue<GameObject>();
-        for (int i = 0; i < config.MagazineSize; i++)
-        {
-            GameObject obj = Instantiate(config.BulletPrefab);
-            bulletPool.Enqueue(obj);
-            obj.SetActive(false);
-        }
-        bulletNum = config.MagazineSize;
-    }
     public void Shoot()
     {
-        if (bulletNum <= 0 || isCD)
+        if (bulletNum<=0||isCD)
         {
             if (config.EmptySound.source.isPlaying == false)
             {
@@ -40,11 +23,10 @@ public class Gun : MonoBehaviour
             return;
         }
         config.ShootSound.source.Play();
-        GameObject bullet = bulletPool.Dequeue();
+        Bullet bullet = BulletPoolController.Instance.Get(config.BulletType);
         bullet.gameObject.transform.position = shootPoint.position;
         bullet.gameObject.transform.rotation = transform.rotation;
-        bullet.SetActive(true);
-        bulletPool.Enqueue(bullet);
+        bullet.Rb.AddForce(transform.right*bullet.Config.Force);
         bulletNum -= 1;
         isCD = true;
         StartCoroutine(WaitCd());
@@ -52,10 +34,6 @@ public class Gun : MonoBehaviour
     public void Reload()
     {
         config.ReloadSound.source.Play();
-        foreach (GameObject bullet in bulletPool)
-        {
-            bullet.SetActive(false);
-        }
         bulletNum = config.MagazineSize;
     }
     IEnumerator WaitCd()

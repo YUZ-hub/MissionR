@@ -3,7 +3,7 @@ using UnityEngine;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
-    public GunType testType;
+    public GunConfig.Type testType;
     private Gun gun;
 
     private void Start()
@@ -28,7 +28,7 @@ public class ShootController : MonoBehaviour
         if (gun != null)
             gun.Reload();
     }
-    public void PickUp(GunType type)
+    public void PickUp(GunConfig.Type type)
     {
         if (gun != null)
         {
@@ -37,5 +37,6 @@ public class ShootController : MonoBehaviour
         gun = GunPoolController.Instance.Get(type);
         gun.transform.SetParent(gunTransform);
         gun.transform.localPosition = Vector3.zero;
+        Reload();
     }
 }
