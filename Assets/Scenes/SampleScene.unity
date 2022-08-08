@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 148398143}
   - component: {fileID: 148398142}
+  - component: {fileID: 148398144}
   m_Layer: 0
-  m_Name: GunObjPool
+  m_Name: ObjPool
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -154,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gunPoolInfos:
   - gunPrefab: {fileID: 6049000192402721911, guid: 5667d97eaab78ec489b8e1a678862f75, type: 3}
-    gunNums: 2
+    gunNum: 2
 --- !u!4 &148398143
 Transform:
   m_ObjectHideFlags: 0
@@ -170,6 +171,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &148398144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 148398141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4f213fdca168d46851df8341b8ba2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPoolInfos:
+  - bulletPrefab: {fileID: 6976630345945557444, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
+    bulletNum: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +368,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1357979955 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 355642474673275357, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
+  m_PrefabInstance: {fileID: 355642475210961850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1357979963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357979955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f38b1f4cb24d4469d0880d47da5c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunTransform: {fileID: 0}
+  testType: 0
 --- !u!1 &1841363198
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,10 +500,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3086093837728948522, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
-      propertyPath: testType
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5884775339669348336, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: cam
       value: 

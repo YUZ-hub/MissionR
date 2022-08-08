@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeMove : MonoBehaviour
+public class BossMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
     [SerializeField] private LayerMask supplyLayer, playerLayer;

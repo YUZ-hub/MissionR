@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Rocket
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2409000011237565060, guid: e48732f2418fabc43bc7690e8f89245f, type: 3}
-  type: 1
+  gunType: 1
+  bulletType: 1
   magazineSize: 5
   reloadSound: {fileID: 11400000, guid: 6679c90994738c64bbed2f025a88f781, type: 2}
   shootSound: {fileID: 11400000, guid: d66e0a9ca7dc63f40920465e6245b32f, type: 2}

@@ -10,14 +10,6 @@ public class ShootController : MonoBehaviour
     {
         PickUp(testType);
     }
-
-    private void Update()
-    {
-        if (Input.GetMouseButton(0))
-        {
-            Trigger();
-        }
-    }
     public void Trigger()
     {
         if ( gun != null && gun.isCD ==false )
