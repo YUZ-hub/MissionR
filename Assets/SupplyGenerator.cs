@@ -7,6 +7,7 @@ public class SupplyGenerator : MonoBehaviour
     [SerializeField] private GameObject magazinePrefab, medicalKitPrefab;
     [SerializeField] private Camera cam;
     [SerializeField] private GameEvent supplyDrop;
+    [SerializeField] private int offset = 10;
 
     private void Start()
     {
@@ -14,11 +15,11 @@ public class SupplyGenerator : MonoBehaviour
     }
     IEnumerator CreateSupply()
     {
-        yield return new WaitForSeconds(10f);
-        int axisX = Random.Range(0, Screen.width);
-        int axisY = Random.Range(0, Screen.height);
+        yield return new WaitForSeconds(5f);
+        int axisX = Random.Range(offset, Screen.width-offset);
+        int axisY = Random.Range(offset, Screen.height-offset);
         Vector2 pos = cam.ScreenToWorldPoint(new Vector3(axisX, axisY, 0f));
-        Instantiate(axisX%2==0?magazinePrefab:medicalKitPrefab,pos,Quaternion.identity);
+        Instantiate(magazinePrefab,pos,Quaternion.identity);
         supplyDrop.Raise();
         StartCoroutine(CreateSupply());
     }

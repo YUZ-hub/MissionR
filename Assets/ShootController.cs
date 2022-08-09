@@ -3,12 +3,10 @@ using UnityEngine;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
-    public GunConfig.Type testType;
     private Gun gun;
-
-    private void Start()
+    public bool HaveGun()
     {
-        PickUp(testType);
+        return gun != null;
     }
     public void Trigger()
     {
@@ -22,13 +20,19 @@ public class ShootController : MonoBehaviour
     }
     public void PickUp(GunConfig.Type type)
     {
-        if (gun != null)
+        if (gun != null )
         {
+            if( gun.Config.GunType == type)
+            {
+                Reload();
+                return;
+            }
             GunPoolController.Instance.Release(gun);
         }
         gun = GunPoolController.Instance.Get(type);
         gun.transform.SetParent(gunTransform);
         gun.transform.localPosition = Vector3.zero;
+        gun.transform.localRotation = Quaternion.identity;
         Reload();
     }
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Supply : MonoBehaviour
 {
+    [SerializeField] private GunConfig.Type type;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
          if( collision.gameObject.TryGetComponent(out ShootController shoot))
          {
-              shoot.Reload();
+              shoot.PickUp(type);
               Destroy(gameObject);
          }
     }

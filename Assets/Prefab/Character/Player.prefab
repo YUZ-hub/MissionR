@@ -170,7 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTransform: {fileID: 6611999507194070118}
-  testType: 0
 --- !u!114 &325249643307327025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025b0f4aa0bf78544a88b4f5ad6d4e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootController: {fileID: 7872255425336129403}
+  shoot: {fileID: 7872255425336129403}
 --- !u!1 &5884775341344485687
 GameObject:
   m_ObjectHideFlags: 0

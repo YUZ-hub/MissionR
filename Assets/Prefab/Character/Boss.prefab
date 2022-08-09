@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 355642474673275351}
   - component: {fileID: 355642474673275348}
   - component: {fileID: 1357979963}
+  - component: {fileID: 1357979964}
   m_Layer: 6
   m_Name: Boss
   m_TagString: Untagged
@@ -262,6 +263,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   rb: {fileID: 355642474673275346}
+  playerTransform: {fileID: 0}
 --- !u!50 &355642474673275346
 Rigidbody2D:
   serializedVersion: 4
@@ -353,7 +355,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTransform: {fileID: 2806345373303171483}
-  testType: 0
+--- !u!114 &1357979964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355642474673275357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 816074321faba7248b50a6363578d732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shoot: {fileID: 1357979963}
+  move: {fileID: 355642474673275347}
 --- !u!1 &355642474872502012
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,7 +508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3425743013833668119}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.589, y: 0, z: 0}
+  m_LocalPosition: {x: 0.63, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

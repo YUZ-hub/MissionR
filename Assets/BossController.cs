@@ -4,6 +4,25 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] ShootController shootController;
-    [SerializeField] BossMove bossMove;
+    [SerializeField] ShootController shoot;
+    [SerializeField] BossMove move;
+
+    private void Start()
+    {
+        StartCoroutine(NormalShoot());
+    }
+    IEnumerator NormalShoot()
+    {
+        float timeline = 0f;
+        while (timeline < 1f)
+        {
+            move.Aim();
+            yield return new WaitForFixedUpdate();
+            timeline += Time.fixedDeltaTime;
+        }
+        yield return new WaitForSeconds(.5f);
+        shoot.Trigger();
+        //only for test
+        StartCoroutine(NormalShoot());
+    }
 }
