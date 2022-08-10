@@ -9,7 +9,8 @@ public class BossController : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(NormalShoot());
+        shoot.PickUp(GunConfig.Type.pistol);
+        StartCoroutine(PistolSkill());
     }
     IEnumerator NormalShoot()
     {
@@ -24,5 +25,29 @@ public class BossController : MonoBehaviour
         shoot.Trigger();
         //only for test
         StartCoroutine(NormalShoot());
+    }
+    IEnumerator PistolSkill()
+    {
+        yield return StartCoroutine(RotateTo(0f));
+        for ( float angle = 45f; angle <= 360f; angle += 45f )
+        {
+            yield return new WaitForSeconds(1f);
+            shoot.Trigger();
+            yield return StartCoroutine(RotateTo(angle));    
+        }
+        StartCoroutine(PistolSkill());
+    }
+    IEnumerator RotateTo(float angle)
+    {
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = rotation;
+        /*
+        while( transform.rotation != rotation)
+        {
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, move.RotateSpeed);
+            yield return null;
+        }
+        */
+        yield return null;
     }
 }

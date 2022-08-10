@@ -3,10 +3,10 @@ using UnityEngine;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
-    private Gun gun;
-    public bool HaveGun()
+    public Gun gun;
+    public Gun GetGun()
     {
-        return gun != null;
+        return gun;
     }
     public void Trigger()
     {

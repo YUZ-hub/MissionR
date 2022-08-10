@@ -10,6 +10,7 @@ public class BossMove : MonoBehaviour
     [SerializeField] private Transform playerTransform;
 
     private Vector2 destination;
+    public float RotateSpeed { get; private set; }
 
     public void Rotate()
     {
