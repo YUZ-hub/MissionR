@@ -3,6 +3,7 @@ using UnityEngine;
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
+
     public Gun gun;
     public Gun GetGun()
     {

@@ -6,11 +6,12 @@ public class BossController : MonoBehaviour
 {
     [SerializeField] ShootController shoot;
     [SerializeField] BossMove move;
+    [SerializeField] Firework fireworkPrefab;
 
     private void Start()
     {
         shoot.PickUp(GunConfig.Type.pistol);
-        StartCoroutine(PistolSkill());
+        FireworkShoot();
     }
     IEnumerator NormalShoot()
     {
@@ -26,28 +27,10 @@ public class BossController : MonoBehaviour
         //only for test
         StartCoroutine(NormalShoot());
     }
-    IEnumerator PistolSkill()
+    private void FireworkShoot()
     {
-        yield return StartCoroutine(RotateTo(0f));
-        for ( float angle = 45f; angle <= 360f; angle += 45f )
-        {
-            yield return new WaitForSeconds(1f);
-            shoot.Trigger();
-            yield return StartCoroutine(RotateTo(angle));    
-        }
-        StartCoroutine(PistolSkill());
-    }
-    IEnumerator RotateTo(float angle)
-    {
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = rotation;
-        /*
-        while( transform.rotation != rotation)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, move.RotateSpeed);
-            yield return null;
-        }
-        */
-        yield return null;
+        Firework firework = Instantiate(fireworkPrefab);
+        firework.transform.position = shoot.GetGun().ShootPoint.position;
+        firework.Shoot();
     }
 }

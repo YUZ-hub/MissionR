@@ -5,7 +5,7 @@ public class BulletConfig : ScriptableObject
 {
     public enum Type
     {
-        pistol, rocket
+        pistol, rocket, fireworkSmall
     }
     [SerializeField] private int damage;
     [SerializeField] private float force;

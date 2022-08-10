@@ -186,6 +186,8 @@ MonoBehaviour:
   bulletPoolInfos:
   - bulletPrefab: {fileID: 6976630345945557444, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
     bulletNum: 50
+  - bulletPrefab: {fileID: 6976630345945557444, guid: d4d5fba67c2727940becd6570403e8b7, type: 3}
+    bulletNum: 50
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,19 +444,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.91366595
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.40646592
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -466,7 +468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -47.966
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275357, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_Name

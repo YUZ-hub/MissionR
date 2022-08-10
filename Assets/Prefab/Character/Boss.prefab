@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot: {fileID: 1357979963}
   move: {fileID: 355642474673275347}
+  fireworkPrefab: {fileID: 6148013872366212556, guid: b8fea942f0a4c864a9a55c664fb9114c, type: 3}
 --- !u!1 &355642475526297848
 GameObject:
   m_ObjectHideFlags: 0

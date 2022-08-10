@@ -8,7 +8,8 @@ public class Gun : MonoBehaviour
     [SerializeField] private Transform shootPoint;
     [SerializeField] private GunConfig config;
 
-    public GunConfig Config { get { return config; } set { value = config; } }
+    public GunConfig Config { get { return config; } private set { value = config; } }
+    public Transform ShootPoint { get { return shootPoint; } private set { value = shootPoint; } }
     public bool isCD { get; private set; } = false;
     private int bulletNum;
 
