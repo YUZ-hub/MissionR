@@ -242,7 +242,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -403,7 +403,7 @@ MonoBehaviour:
   medicalKitPrefab: {fileID: 6878178447466394142, guid: 3db7813c48bdbf74188b830384a0e64c, type: 3}
   cam: {fileID: 519420031}
   supplyDrop: {fileID: 11400000, guid: c43c0278dd0237a4e956ebfd421ff403, type: 2}
-  offset: 10
+  offset: 30
 --- !u!4 &1841363200
 Transform:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.97
+      value: -3.05
       objectReference: {fileID: 0}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_LocalPosition.y
@@ -497,11 +497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5884775339669348338, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884775339669348338, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.78
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5884775339669348338, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
       propertyPath: m_LocalPosition.z

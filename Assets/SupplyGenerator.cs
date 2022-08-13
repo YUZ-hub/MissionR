@@ -19,7 +19,7 @@ public class SupplyGenerator : MonoBehaviour
         int axisX = Random.Range(offset, Screen.width-offset);
         int axisY = Random.Range(offset, Screen.height-offset);
         Vector2 pos = cam.ScreenToWorldPoint(new Vector3(axisX, axisY, 0f));
-        Instantiate(magazinePrefab,pos,Quaternion.identity);
+        Instantiate(medicalKitPrefab,pos,Quaternion.identity);
         supplyDrop.Raise();
         StartCoroutine(CreateSupply());
     }

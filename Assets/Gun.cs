@@ -27,7 +27,7 @@ public class Gun : MonoBehaviour
         Bullet bullet = BulletPoolController.Instance.Get(config.BulletType);
         bullet.gameObject.transform.position = shootPoint.position;
         bullet.gameObject.transform.rotation = transform.rotation;
-        bullet.Rb.AddForce(transform.right*bullet.Config.Force);
+        bullet.Rb.AddForce(shootPoint.up*bullet.Config.Force);
         bulletNum -= 1;
         isCD = true;
         StartCoroutine(WaitCd());
