@@ -26,7 +26,7 @@ public class Gun : MonoBehaviour
         config.ShootSound.source.Play();
         Bullet bullet = BulletPoolController.Instance.Get(config.BulletType);
         bullet.gameObject.transform.position = shootPoint.position;
-        bullet.gameObject.transform.rotation = transform.rotation;
+        bullet.gameObject.transform.rotation = shootPoint.rotation;
         bullet.Rb.AddForce(shootPoint.up*bullet.Config.Force);
         bulletNum -= 1;
         isCD = true;
