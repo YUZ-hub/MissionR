@@ -48,7 +48,6 @@ public class PlayerMove : MonoBehaviour
             angle += 180;
         }
         gunHoldTransform.rotation = Quaternion.Slerp(gunHoldTransform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotateSpeed);
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotateSpeed);
     }
     private void Flip()
     {
