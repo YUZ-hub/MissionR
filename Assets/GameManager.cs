@@ -1,10 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] private GameObject winPanel, losePanel;
+    [SerializeField] private int gameSceneIndex;
+
     private void Awake()
     {
         if( Instance != null)
@@ -17,14 +20,14 @@ public class GameManager : MonoBehaviour
     }
     public void StartGame()
     {
-        //load scene
+        SceneManager.LoadScene(gameSceneIndex);
     }
-    public void GameOver()
+    public void Win()
     {
-        //gameover ui
+        winPanel.SetActive(true);
     }
-    public void StageClear()
+    public void Lose()
     {
-        //win game ui
+        losePanel.SetActive(true);
     }
 }

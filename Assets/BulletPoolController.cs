@@ -24,7 +24,6 @@ public class BulletPoolController : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         bulletDictionary = new Dictionary<BulletConfig.Type, ObjectPool<Bullet>>();
         foreach( BulletPoolInfo poolInfo in bulletPoolInfos)
         {

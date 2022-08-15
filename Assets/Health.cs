@@ -4,7 +4,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHp;
     private int hp;
-
+    [SerializeField] private GameEvent dieEvent;
     public int MaxHp { get { return maxHp; } private set { value = maxHp; } }
     public int Hp { get { return hp; } private set { value = hp; } }
 
@@ -24,7 +24,8 @@ public class Health : MonoBehaviour
     }
     private void Die()
     {
-        //die
+        if(dieEvent!=null)    
+            dieEvent.Raise();
     }
     public void Heal( int _hp )
     {

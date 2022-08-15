@@ -53,7 +53,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36d7038a99005f48bd57feebb38d4b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 2
   rotateSpeed: 10
   supplyLayer:
     serializedVersion: 2
@@ -61,7 +61,6 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  rb: {fileID: 355642474673275346}
   playerTransform: {fileID: 5884775339669348338, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
   dashOffset: 1
   golemHeight: 0.5
@@ -117,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 1000
+  dieEvent: {fileID: 11400000, guid: 351473abee2cbce429bbaf6d43943fe7, type: 2}
 --- !u!114 &1357979964
 MonoBehaviour:
   m_ObjectHideFlags: 0

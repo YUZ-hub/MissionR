@@ -6,7 +6,6 @@ public class BossMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
     [SerializeField] private LayerMask supplyLayer, playerLayer;
-    [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float dashOffset, golemHeight;
     [SerializeField] private float patrolTime;
@@ -44,8 +43,8 @@ public class BossMove : MonoBehaviour
         while (target != null)
         {
             Vector2 direction = (target.position - transform.position).normalized;
-            rb.MovePosition((Vector2)transform.position +speed*Time.deltaTime*direction);
-            if(direction.x * transform.localScale.x < 0)
+            transform.Translate(speed*Time.deltaTime*direction);
+            if(direction.x>0^transform.localScale.x>0)
             {
                 Flip();
             }
@@ -57,18 +56,16 @@ public class BossMove : MonoBehaviour
     {
         float time = 0f;
         Vector2 direction = playerTransform.position.x > transform.position.x ? Vector2.right : Vector2.left;
-        if(direction.x * transform.localScale.x < 0)
+        if(direction.x >0^transform.localScale.x>0)
         {
             Flip();
         }
         while (time < patrolTime)
         {
-            rb.MovePosition((Vector2)transform.position + Time.deltaTime * speed * direction);
+            transform.Translate(Time.deltaTime*speed*direction);
             time += Time.deltaTime;
             yield return null;
         }
         controller.SetIdle();
     }
-
-
 }

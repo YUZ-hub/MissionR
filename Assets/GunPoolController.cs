@@ -24,7 +24,6 @@ public class GunPoolController : MonoBehaviour
             return;
         }
         Instance = this;
-        DontDestroyOnLoad(gameObject);
         gunDictionary = new Dictionary<GunConfig.Type, ObjectPool<Gun>>();
         foreach( GunPoolInfo poolInfo in gunPoolInfos)
         {

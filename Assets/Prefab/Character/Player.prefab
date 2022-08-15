@@ -221,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
+  dieEvent: {fileID: 11400000, guid: 265cf90cc9c4b8a498364a1cd401ff01, type: 2}
 --- !u!114 &7872255425336129403
 MonoBehaviour:
   m_ObjectHideFlags: 0

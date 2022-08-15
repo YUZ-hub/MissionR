@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba668ceaf6914645a8a4da8ce29cdb7, type: 3}
   m_Name: PistolBullet
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 300
   force: 2000
   hitSound: {fileID: 11400000, guid: 26196b449c0d5cf4fb32b67af4b3b3a2, type: 2}
   hitParticlePrefab: {fileID: 8932494539528139803, guid: b44c5d92552e5764581f36d370116895, type: 3}
+  bulletType: 0

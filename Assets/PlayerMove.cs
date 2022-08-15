@@ -39,7 +39,7 @@ public class PlayerMove : MonoBehaviour
     {
         Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;    
-        if ((direction.x * transform.localScale.x) < 0)
+        if (direction.x>0^transform.localScale.x>0)
         {
             Flip();
         }
