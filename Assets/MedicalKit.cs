@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MedicalKit : MonoBehaviour
@@ -18,7 +16,7 @@ public class MedicalKit : MonoBehaviour
     {
         if ( collision.TryGetComponent(out Health health))
         {
-            health.Heal(50);
+            health.Heal(.3f);
             healSound.source.Play();
             healParticle.transform.position = transform.position;
             healParticle.Play();

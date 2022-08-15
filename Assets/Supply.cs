@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Supply : MonoBehaviour
@@ -11,7 +9,7 @@ public class Supply : MonoBehaviour
          if( collision.gameObject.TryGetComponent(out ShootController shoot))
          {
               shoot.PickUp(type);
-              Destroy(gameObject);
          }
+         Destroy(gameObject);
     }
 }

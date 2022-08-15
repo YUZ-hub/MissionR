@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1013141507077622591, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
-  magazineSize: 10
+  gunType: 0
+  bulletType: 0
+  magazineSize: 30
   reloadSound: {fileID: 11400000, guid: 6679c90994738c64bbed2f025a88f781, type: 2}
   shootSound: {fileID: 11400000, guid: d66e0a9ca7dc63f40920465e6245b32f, type: 2}
   emptySound: {fileID: 11400000, guid: 0654f0455f23b5f4d84b027c60ac7e7d, type: 2}

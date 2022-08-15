@@ -9,7 +9,7 @@ public class ShootController : MonoBehaviour
     {
         return gun;
     }
-    public void Trigger()
+    public virtual void Trigger()
     {
         if ( gun != null && gun.isCD ==false )
             gun.Shoot();
@@ -19,7 +19,7 @@ public class ShootController : MonoBehaviour
         if (gun != null)
             gun.Reload();
     }
-    public void PickUp(GunConfig.Type type)
+    public virtual void PickUp(GunConfig.Type type)
     {
         if (gun != null )
         {

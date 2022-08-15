@@ -10,12 +10,13 @@ public class Gun : MonoBehaviour
 
     public GunConfig Config { get { return config; } private set { value = config; } }
     public Transform ShootPoint { get { return shootPoint; } private set { value = shootPoint; } }
+    public bool IsEmpty() { return bulletNum <= 0;  }
     public bool isCD { get; private set; } = false;
     private int bulletNum;
 
     public void Shoot()
     {
-        if (bulletNum<=0||isCD)
+        if (IsEmpty()||isCD)
         {
             if (config.EmptySound.source.isPlaying == false)
             {
