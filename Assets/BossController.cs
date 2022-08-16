@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    [SerializeField] private ShootController shoot;
     [SerializeField] private BossMove move;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform smiteTransform;
     [SerializeField] private LayerMask playerLayer, supplyLayer;
     [SerializeField] private float smiteRange, breakTime;
     [SerializeField] private Sound smashSound;
-    [SerializeField] private CameraShake camShake;
 
     private bool waitForIdle = false;
     private bool isIdle = false;
@@ -57,7 +55,7 @@ public class BossController : MonoBehaviour
             health.TakeDamage(40);
         }
         smashSound.source.Play();
-        camShake.Shake();
+        CameraHandler.Instance.Shake();
         SetIdle();
     }
     public void FindSupply()

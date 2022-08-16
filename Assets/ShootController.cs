@@ -4,11 +4,7 @@ public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
 
-    public Gun gun;
-    public Gun GetGun()
-    {
-        return gun;
-    }
+    public Gun gun { get; private set; }
     public virtual void Trigger()
     {
         if ( gun != null && gun.isCD ==false )

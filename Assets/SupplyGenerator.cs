@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SupplyGenerator : MonoBehaviour
@@ -17,10 +16,9 @@ public class SupplyGenerator : MonoBehaviour
     IEnumerator CreateSupply()
     {
         yield return new WaitForSeconds(generateTime);
-        int axisX = Random.Range(offset, Screen.width-offset);
-        int axisY = Random.Range(offset, Screen.height-offset);
-        Vector2 pos = cam.ScreenToWorldPoint(new Vector3(axisX, axisY, 0f));
-        Instantiate((int)axisX%3==0?medicalKitPrefab:pistolPrefab,pos,Quaternion.identity);
+        Vector2 pos = CameraHandler.Instance.RandomWorldPoint(offset);
+        int dice = Random.Range(1, 6);
+        Instantiate(dice>2?pistolPrefab:medicalKitPrefab,pos,Quaternion.identity);
         supplyDrop.Raise();
         StartCoroutine(CreateSupply());
     }

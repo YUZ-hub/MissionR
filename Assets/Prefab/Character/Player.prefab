@@ -74,7 +74,6 @@ GameObject:
   - component: {fileID: 5884775339669348338}
   - component: {fileID: 5884775339669348339}
   - component: {fileID: 5884775339669348336}
-  - component: {fileID: 5884775339669348349}
   - component: {fileID: 1260690341}
   - component: {fileID: 1213251210}
   - component: {fileID: 7872255425336129403}
@@ -169,29 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   rotateSpeed: 20
-  cam: {fileID: 0}
   gunHoldTransform: {fileID: 569470912376838131}
---- !u!50 &5884775339669348349
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5884775339669348337}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 4
 --- !u!58 &1260690341
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -5,31 +5,25 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
-    [SerializeField] private Camera cam;
     [SerializeField] private Transform gunHoldTransform;
 
     private Vector2 destination, mousePos;
-    private Rigidbody2D rb;
 
     private void Start()
     {
-        TryGetComponent(out rb);
         destination = transform.position;
     }
 
 
     private void Update()
     {
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = CameraHandler.Instance.ScreenToWorldPoint(Input.mousePosition);
         Rotate();
         if ( Input.GetMouseButtonDown(1) )
         {
             destination = mousePos;
         }
-    }
-    private void FixedUpdate()
-    {
-        if( Vector2.Distance(transform.position, destination) > .3f )
+        if (Vector2.Distance(transform.position, destination) > .3f)
         {
             Move();
         }
@@ -58,6 +52,6 @@ public class PlayerMove : MonoBehaviour
     private void Move()
     {
         Vector2 direction = (destination - (Vector2)transform.position).normalized;
-        rb.MovePosition((Vector2)transform.position + speed*Time.fixedDeltaTime*direction);   
+        transform.Translate(speed*Time.deltaTime*direction);   
     }
 }
