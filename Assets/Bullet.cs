@@ -15,14 +15,6 @@ public class Bullet : MonoBehaviour
         hitParticle = Instantiate(config.HitParticlePrefab);
     }
 
-    private void OnEnable()
-    {
-        StartCoroutine(AutoRelease());
-    }
-    private void OnDisable()
-    {
-        rb.velocity = Vector2.zero;
-    }
     private void OnTriggerEnter2D(Collider2D collider)
     { 
         if(collider.gameObject.TryGetComponent(out Health health))
@@ -32,12 +24,6 @@ public class Bullet : MonoBehaviour
             CameraHandler.Instance.Shake();
             hitParticle.transform.position = transform.position;
             hitParticle.Play();
-            BulletPoolController.Instance.Release(this);
         }     
-    }
-    IEnumerator AutoRelease()
-    {
-        yield return new WaitForSeconds(15f);
-        BulletPoolController.Instance.Release(this);
     }
 }

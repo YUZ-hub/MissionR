@@ -1,19 +1,37 @@
 using UnityEngine;
+using System.Collections.Generic;
 
+[System.Serializable]
+public class GunGenerateInfo
+{
+    public GameObject gunPrefab;
+    public GunConfig.Type type;
+}
 public class ShootController : MonoBehaviour
 {
     [SerializeField] private Transform gunTransform;
+    [SerializeField] List<GunGenerateInfo> infos = new List<GunGenerateInfo>();
 
+    private Dictionary<GunConfig.Type, Gun> gunDictionary = new Dictionary<GunConfig.Type, Gun>();
     public Gun gun { get; private set; }
+
+    private void Start()
+    {
+        foreach(GunGenerateInfo info in infos)
+        {
+            if(Instantiate(info.gunPrefab).TryGetComponent(out Gun g))
+            {
+                g.gameObject.transform.SetParent(gunTransform);
+                g.gameObject.transform.localPosition = Vector3.zero;
+                gunDictionary.Add(info.type, g);
+                g.gameObject.SetActive(false);
+            }
+        }
+    }
     public virtual void Trigger()
     {
-        if ( gun != null && gun.isCD ==false )
+        if ( gun != null )
             gun.Shoot();
-    }
-    public void Reload()
-    {
-        if (gun != null)
-            gun.Reload();
     }
     public virtual void PickUp(GunConfig.Type type)
     {
@@ -21,15 +39,15 @@ public class ShootController : MonoBehaviour
         {
             if( gun.Config.GunType == type)
             {
-                Reload();
-                return;
+                gun.Reload();
             }
-            GunPoolController.Instance.Release(gun);
+            else
+            {
+                gun.gameObject.SetActive(false);
+            }
         }
-        gun = GunPoolController.Instance.Get(type);
-        gun.transform.SetParent(gunTransform);
-        gun.transform.localPosition = Vector3.zero;
-        gun.transform.localRotation = Quaternion.identity;
-        Reload();
+        gun = gunDictionary[type];
+        gun.gameObject.SetActive(true);
+        gun.Reload();
     }
 }

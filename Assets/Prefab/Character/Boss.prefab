@@ -61,7 +61,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  playerTransform: {fileID: 5884775339669348338, guid: 6c493a2bc3c7ec74ba8df074b2fe7d7e, type: 3}
+  playerTransform: {fileID: 0}
   dashOffset: 1
   golemHeight: 0.5
   patrolTime: 2
@@ -129,7 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816074321faba7248b50a6363578d732, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoot: {fileID: 0}
   move: {fileID: 355642474673275347}
   animator: {fileID: 6150283243109414768}
   smiteTransform: {fileID: 6181701283312337797}
@@ -142,7 +141,6 @@ MonoBehaviour:
   smiteRange: 1
   breakTime: 1.5
   smashSound: {fileID: 11400000, guid: 1fcd4fba7cafb924ea568ddcab7753f5, type: 2}
-  camShake: {fileID: 0}
 --- !u!95 &6150283243109414768
 Animator:
   serializedVersion: 4

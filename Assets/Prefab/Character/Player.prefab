@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 1213251210}
   - component: {fileID: 7872255425336129403}
   - component: {fileID: 325249643307327025}
+  - component: {fileID: 6149424945668840}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -212,7 +213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunTransform: {fileID: 6611999507194070118}
-  gun: {fileID: 0}
+  infos:
+  - gunPrefab: {fileID: 7502577788913518000, guid: 5667d97eaab78ec489b8e1a678862f75, type: 3}
+    type: 0
 --- !u!114 &325249643307327025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,6 +229,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shoot: {fileID: 7872255425336129403}
+--- !u!50 &6149424945668840
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884775339669348337}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &8940946514455460544
 GameObject:
   m_ObjectHideFlags: 0
