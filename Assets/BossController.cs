@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
+    [SerializeField] private BossShoot shoot;
     [SerializeField] private BossMove move;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform smiteTransform;
@@ -13,8 +14,9 @@ public class BossController : MonoBehaviour
     private bool waitForIdle = false;
     private bool isIdle = false;
     public bool IsIdle { get { return isIdle; } private set { value = isIdle; } }
-    private void Start()
+    IEnumerator Start()
     {
+        yield return new WaitForSeconds(breakTime);
         SetIdle();
     }
     private void Update()
@@ -35,8 +37,12 @@ public class BossController : MonoBehaviour
                 case 0:
                     move.Patrol();
                     break;
+                
                 default:
-                    DashSmite();
+                    if( shoot.gun != null )
+                        shoot.NormalShoot();
+                    else
+                        DashSmite();
                     break;
             }
         }

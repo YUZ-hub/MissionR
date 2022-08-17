@@ -9,11 +9,11 @@ public class GunGenerateInfo
 }
 public class ShootController : MonoBehaviour
 {
-    [SerializeField] private Transform gunTransform;
+    [SerializeField] protected Transform gunTransform;
     [SerializeField] List<GunGenerateInfo> infos = new List<GunGenerateInfo>();
 
     private Dictionary<GunConfig.Type, Gun> gunDictionary = new Dictionary<GunConfig.Type, Gun>();
-    public Gun gun { get; private set; }
+    public Gun gun { get; protected set; }
 
     private void Start()
     {
@@ -23,6 +23,7 @@ public class ShootController : MonoBehaviour
             {
                 g.gameObject.transform.SetParent(gunTransform);
                 g.gameObject.transform.localPosition = Vector3.zero;
+                g.gameObject.transform.rotation = gunTransform.rotation;
                 gunDictionary.Add(info.type, g);
                 g.gameObject.SetActive(false);
             }

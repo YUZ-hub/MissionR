@@ -24,6 +24,7 @@ public class Bullet : MonoBehaviour
             CameraHandler.Instance.Shake();
             hitParticle.transform.position = transform.position;
             hitParticle.Play();
+            gameObject.SetActive(false);
         }     
     }
 }
