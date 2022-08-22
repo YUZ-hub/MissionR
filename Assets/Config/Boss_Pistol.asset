@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb11676d1e26df418b97dba656aeb72, type: 3}
   m_Name: Boss_Pistol
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 6976630345945557444, guid: 22ab6bd6a3a004547bf4d031a74ac812, type: 3}
+  bulletPrefab: {fileID: 9004517935708558732, guid: 7be5162c980955e45a9dba791163ab32, type: 3}
   gunType: 0
-  magazineSize: 5
-  reloadSound: {fileID: 11400000, guid: 6679c90994738c64bbed2f025a88f781, type: 2}
-  shootSound: {fileID: 11400000, guid: d66e0a9ca7dc63f40920465e6245b32f, type: 2}
+  magazineSize: 50
+  reloadSound: {fileID: 11400000, guid: 595a2efc75dcacc46b25394db08a18c0, type: 2}
+  shootSound: {fileID: 11400000, guid: fa06c53e703260c47a9a0372d908344e, type: 2}
   emptySound: {fileID: 11400000, guid: 0654f0455f23b5f4d84b027c60ac7e7d, type: 2}
-  shootCD: 1.5
+  shootCD: 0

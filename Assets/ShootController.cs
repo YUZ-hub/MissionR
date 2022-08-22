@@ -47,8 +47,11 @@ public class ShootController : MonoBehaviour
                 gun.gameObject.SetActive(false);
             }
         }
-        gun = gunDictionary[type];
-        gun.gameObject.SetActive(true);
-        gun.Reload();
+        if( gunDictionary.TryGetValue(type,out Gun g))
+        {
+            gun = g;
+            gun.gameObject.SetActive(true);
+            gun.Reload();
+        }    
     }
 }

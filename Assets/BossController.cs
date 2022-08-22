@@ -8,12 +8,13 @@ public class BossController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Transform smiteTransform;
     [SerializeField] private LayerMask playerLayer, supplyLayer;
-    [SerializeField] private float smiteRange, breakTime;
+    [SerializeField] private float smiteRange, breakTime, detectRange;
     [SerializeField] private Sound smashSound;
 
     private bool waitForIdle = false;
     private bool isIdle = false;
     public bool IsIdle { get { return isIdle; } private set { value = isIdle; } }
+    public BossMove Move { get { return move; } private set { value = move; } }
     IEnumerator Start()
     {
         yield return new WaitForSeconds(breakTime);
@@ -31,15 +32,26 @@ public class BossController : MonoBehaviour
             }
 
             isIdle = false;
-            int dice = Random.Range(0, 2);
+            int dice = Random.Range(0, 3);
             switch (dice)
             {
                 case 0:
                     move.Patrol();
                     break;
-                
+                case 1:
+                    if (shoot.gun != null)
+                        shoot.NormalShoot();
+                    else
+                        DashSmite();
+                    break;
+                case 2:
+                    if (shoot.gun != null)
+                        shoot.Ultimate();
+                    else
+                        DashSmite();
+                    break;
                 default:
-                    if( shoot.gun != null )
+                    if (shoot.gun != null)
                         shoot.NormalShoot();
                     else
                         DashSmite();
@@ -47,13 +59,12 @@ public class BossController : MonoBehaviour
             }
         }
     }
-
     private void DashSmite()
     {
         move.DashToPlayerBack();
         animator.Play("Smash");
     }
-    public void SmiteDamageEvent()//only call by animation event
+    public void SmiteDamageEvent()
     {
         Collider2D hit = Physics2D.OverlapCircle(smiteTransform.position, smiteRange, playerLayer);
         if( hit && hit.TryGetComponent(out Health health) )
@@ -72,7 +83,7 @@ public class BossController : MonoBehaviour
             return;
         }
         isIdle = false;
-        Collider2D hit = Physics2D.OverlapCircle(transform.position, 100f, supplyLayer);
+        Collider2D hit = Physics2D.OverlapCircle(transform.position, detectRange, supplyLayer);
         if( hit )
         {
             move.MoveTo(hit.transform);

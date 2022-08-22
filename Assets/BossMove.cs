@@ -10,7 +10,9 @@ public class BossMove : MonoBehaviour
     [SerializeField] private float dashOffset, golemHeight;
     [SerializeField] private float patrolTime;
     [SerializeField] private BossController controller;
-    public float RotateSpeed { get; private set; }
+
+    public Transform PlayerTransform { get { return playerTransform; } private set { value = playerTransform; } }
+    public float Speed { get { return speed; } private set { value = speed; } }
     public void DashToPlayerBack()
     {
         Vector2 targetPos = playerTransform.position;

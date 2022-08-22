@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] ShootController shoot;
+    [SerializeField] Animator animator;
     private void Start()
     {
         shoot.PickUp(GunConfig.Type.pistol);
@@ -14,4 +15,10 @@ public class PlayerController : MonoBehaviour
             shoot.Trigger();
         }        
     }
+    public void OnPlayerDie()
+    {
+        animator.Play("Die");
+        //lock control of player
+    }
+
 }

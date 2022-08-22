@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba668ceaf6914645a8a4da8ce29cdb7, type: 3}
+  m_Name: Boss_Pistol_Bullet
+  m_EditorClassIdentifier: 
+  damage: 30
+  force: 2000
+  hitSound: {fileID: 11400000, guid: 350f30f5611c5764080fdadece4f0c3e, type: 2}
+  hitParticlePrefab: {fileID: 8932494539528139803, guid: ed2902d978570f64c91256afc1fb052f, type: 3}

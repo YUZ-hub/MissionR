@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class SupplyGenerator : MonoBehaviour
 {
-    [SerializeField] private GameObject pistolPrefab, medicalKitPrefab;
-    [SerializeField] private Camera cam;
+    [SerializeField] private GameObject[] gunPrefabs;
+    [SerializeField] private GameObject medicalKitPrefab;
     [SerializeField] private GameEvent supplyDrop;
-    [SerializeField] private int offset;
     [SerializeField] private float generateTime;
 
     private void Start()
@@ -16,9 +15,19 @@ public class SupplyGenerator : MonoBehaviour
     IEnumerator CreateSupply()
     {
         yield return new WaitForSeconds(generateTime);
-        Vector2 pos = CameraHandler.Instance.RandomWorldPoint(offset);
+        Vector2 pos = CameraHandler.Instance.RandomWorldPoint();
         int dice = Random.Range(1, 6);
-        Instantiate(dice>2?pistolPrefab:medicalKitPrefab,pos,Quaternion.identity);
+        switch (dice)
+        {
+            case 5:
+                Instantiate(medicalKitPrefab, pos, Quaternion.identity);
+                break;
+            default:
+                Instantiate(gunPrefabs[Random.Range(0, gunPrefabs.Length)], pos, Quaternion.identity);
+                break;
+        }
+
+        
         supplyDrop.Raise();
         StartCoroutine(CreateSupply());
     }

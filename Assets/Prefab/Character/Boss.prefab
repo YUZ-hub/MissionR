@@ -142,6 +142,7 @@ MonoBehaviour:
     m_Bits: 128
   smiteRange: 1
   breakTime: 1.5
+  detectRange: 10
   smashSound: {fileID: 11400000, guid: 1fcd4fba7cafb924ea568ddcab7753f5, type: 2}
 --- !u!95 &6150283243109414768
 Animator:
@@ -207,13 +208,20 @@ MonoBehaviour:
   infos:
   - gunPrefab: {fileID: 2388987519591861646, guid: 5a73e883c46fae04b83750d10cd25525, type: 3}
     type: 0
+  - gunPrefab: {fileID: 776924416514610984, guid: b2ffdd8e5a601414ca7b4a993fdf6337, type: 3}
+    type: 1
   leftHand: {fileID: 2854318414786648639}
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 8
   controller: {fileID: 1357979964}
-  aimTime: 1.5
-  prepareTime: 0.5
+  aimTime: 0.4
+  prepareTime: 0.1
+  shootTimes: 3
+  ultShootTime: 2
+  ultInterval: 0.2
+  ultPrepareTime: 1
+  playerTransform: {fileID: 0}
+  ultMissile: {fileID: 5241571217774708462, guid: 40e9720d592994641a8466023f5a2cb6, type: 3}
+  ultMissileNums: 5
+  ultMissileShootSound: {fileID: 11400000, guid: fa06c53e703260c47a9a0372d908344e, type: 2}
 --- !u!1 &1581133738100112033
 GameObject:
   m_ObjectHideFlags: 0

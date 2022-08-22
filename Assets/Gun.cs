@@ -8,6 +8,7 @@ public class Gun : MonoBehaviour
     [SerializeField] private GunConfig config;
 
     public GunConfig Config { get { return config; } private set { value = config; } }
+    public Transform ShootPoint { get { return shootPoint; } private set { value = shootPoint; } }
     public bool IsEmpty() { return bulletNum <= 0;  }
     public bool isCD { get; private set; } = false;
     private int bulletNum;
@@ -35,7 +36,11 @@ public class Gun : MonoBehaviour
         {
             InitBulletPool();
         }
-        if (IsEmpty()||isCD)
+        if (isCD)
+        {
+            return;
+        }
+        if (IsEmpty())
         {
             if (config.EmptySound.source.isPlaying == false)
             {
@@ -57,6 +62,7 @@ public class Gun : MonoBehaviour
     {
         config.ReloadSound.source.Play();
         bulletNum = config.MagazineSize;
+        isCD = false;
     }
     IEnumerator WaitCd()
     {

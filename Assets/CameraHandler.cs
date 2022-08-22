@@ -8,7 +8,8 @@ public class CameraHandler : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private float duration, magnitude;
     [SerializeField] private AnimationCurve curve;
-
+    [SerializeField] private int offset;
+    
     private void Awake()
     {
         if( Instance != null)
@@ -34,7 +35,7 @@ public class CameraHandler : MonoBehaviour
             SetCamera();
         return cam.ScreenToWorldPoint(screenPos);
     }
-    public Vector2 RandomWorldPoint(int offset = 0)
+    public Vector2 RandomWorldPoint()
     {
         if (cam == null)
             SetCamera();
