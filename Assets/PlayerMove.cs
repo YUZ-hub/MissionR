@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed, rotateSpeed;
     [SerializeField] private Transform gunHoldTransform;
+    [SerializeField] private PlayerController controller;
 
     private Vector2 destination, mousePos;
 
@@ -13,10 +12,12 @@ public class PlayerMove : MonoBehaviour
     {
         destination = transform.position;
     }
-
-
     private void Update()
     {
+        if( controller.isAlive == false)
+        {
+            return;
+        }
         mousePos = CameraHandler.Instance.ScreenToWorldPoint(Input.mousePosition);
         Rotate();
         if ( Input.GetMouseButtonDown(1) )

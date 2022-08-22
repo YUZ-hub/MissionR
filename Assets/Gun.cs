@@ -11,7 +11,7 @@ public class Gun : MonoBehaviour
     public Transform ShootPoint { get { return shootPoint; } private set { value = shootPoint; } }
     public bool IsEmpty() { return bulletNum <= 0;  }
     public bool isCD { get; private set; } = false;
-    private int bulletNum;
+    public int bulletNum { get; private set; } = 0;
     private ObjectPool<Bullet> bulletPool;
 
     private void InitBulletPool()

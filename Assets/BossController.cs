@@ -13,8 +13,7 @@ public class BossController : MonoBehaviour
 
     private bool waitForIdle = false;
     private bool isIdle = false;
-    public bool IsIdle { get { return isIdle; } private set { value = isIdle; } }
-    public BossMove Move { get { return move; } private set { value = move; } }
+    public BossMove Move { get { return move; } private set { move = value; } }
     IEnumerator Start()
     {
         yield return new WaitForSeconds(breakTime);
@@ -101,5 +100,12 @@ public class BossController : MonoBehaviour
     {
         yield return new WaitForSeconds(breakTime);
         isIdle = true;
+    }
+    public void OnBossDie()
+    {
+        Destroy(move);
+        Destroy(shoot);
+        animator.Play("Die");
+        Destroy(this);    
     }
 }

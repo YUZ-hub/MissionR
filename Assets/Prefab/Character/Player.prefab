@@ -172,6 +172,7 @@ MonoBehaviour:
   speed: 5
   rotateSpeed: 20
   gunHoldTransform: {fileID: 569470912376838131}
+  controller: {fileID: 325249643307327025}
 --- !u!58 &1260690341
 CircleCollider2D:
   m_ObjectHideFlags: 0
