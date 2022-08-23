@@ -235,6 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shoot: {fileID: 7872255425336129403}
   animator: {fileID: 8778863156215283019}
+  move: {fileID: 5884775339669348336}
 --- !u!50 &6149424945668840
 Rigidbody2D:
   serializedVersion: 4

@@ -4,8 +4,9 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private ShootController shoot;
     [SerializeField] private Animator animator;
+    [SerializeField] private PlayerMove move;
 
-    public bool isAlive { get; private set; } = true;
+    private bool isAlive = true;
 
     private void Start()
     {
@@ -20,7 +21,17 @@ public class PlayerController : MonoBehaviour
         if( Input.GetMouseButton(0) )
         {
             shoot.Trigger();
-        }        
+        }
+        Vector2 mousePos = CameraHandler.Instance.ScreenToWorldPoint(Input.mousePosition);
+        move.RotateTo(mousePos);
+        if (Input.GetMouseButtonDown(1))
+        {
+            move.MoveTo(mousePos);
+        }
+        else
+        {
+            move.Move();
+        }
     }
     public void OnPlayerDie()
     {

@@ -56,7 +56,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  rotateSpeed: 10
   supplyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -213,12 +212,12 @@ MonoBehaviour:
     type: 1
   leftHand: {fileID: 2854318414786648639}
   controller: {fileID: 1357979964}
-  aimTime: 0.4
-  prepareTime: 0.1
+  aimTime: 0.5
+  prepareTime: 0.2
   shootTimes: 3
-  ultShootTime: 2
-  ultInterval: 0.2
-  ultPrepareTime: 1
+  ultShootTime: 1.5
+  ultInterval: 0.3
+  ultPrepareTime: 1.5
   playerTransform: {fileID: 0}
   ultMissile: {fileID: 5241571217774708462, guid: 40e9720d592994641a8466023f5a2cb6, type: 3}
   ultMissileNums: 10

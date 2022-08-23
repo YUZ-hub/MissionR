@@ -1,18 +1,17 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossMove : MonoBehaviour
 {
-    [SerializeField] private float speed, rotateSpeed;
+    [SerializeField] private float speed;
     [SerializeField] private LayerMask supplyLayer, playerLayer;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private float dashOffset, golemHeight;
     [SerializeField] private float patrolTime;
     [SerializeField] private BossController controller;
 
-    public Transform PlayerTransform { get { return playerTransform; } private set { value = playerTransform; } }
-    public float Speed { get { return speed; } private set { value = speed; } }
+    public float Speed { get { return speed; } private set { speed = value; } }
+
     public void DashToPlayerBack()
     {
         Vector2 targetPos = playerTransform.position;
@@ -69,5 +68,9 @@ public class BossMove : MonoBehaviour
             yield return null;
         }
         controller.SetIdle();
+    }
+    public void SpeedUp()
+    {
+        speed *= 1.5f;
     }
 }

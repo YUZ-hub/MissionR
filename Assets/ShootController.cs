@@ -31,8 +31,9 @@ public class ShootController : MonoBehaviour
     }
     public virtual void Trigger()
     {
-        if ( gun != null )
-            gun.Shoot();
+        if (gun == null)
+            return;
+        gun.Shoot();
     }
     public virtual void PickUp(GunConfig.Type type)
     {

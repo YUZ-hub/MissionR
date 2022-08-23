@@ -10,10 +10,14 @@ public class BossController : MonoBehaviour
     [SerializeField] private LayerMask playerLayer, supplyLayer;
     [SerializeField] private float smiteRange, breakTime, detectRange;
     [SerializeField] private Sound smashSound;
+    [SerializeField] private Health health;
 
     private bool waitForIdle = false;
     private bool isIdle = false;
+    private bool isRage = false;
+
     public BossMove Move { get { return move; } private set { move = value; } }
+    
     IEnumerator Start()
     {
         yield return new WaitForSeconds(breakTime);
@@ -21,6 +25,12 @@ public class BossController : MonoBehaviour
     }
     private void Update()
     {
+        if( isRage == false && health.Hp<health.MaxHp/2)
+        {
+            isRage = true;
+            Rage();
+        }
+
         if( isIdle )
         {
             if (waitForIdle)
@@ -107,5 +117,12 @@ public class BossController : MonoBehaviour
         Destroy(shoot);
         animator.Play("Die");
         Destroy(this);    
+    }
+    public void Rage()
+    {
+        move.SpeedUp();
+        shoot.PowerUp();
+        breakTime /= 1.5f;
+        smiteRange *= 1.2f;
     }
 }

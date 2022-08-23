@@ -13,6 +13,16 @@ public class BossShoot : ShootController
     [SerializeField] private int ultMissileNums;
     [SerializeField] private Sound ultMissileShootSound;
 
+    public void PowerUp()
+    {
+        aimTime /= 1.2f;
+        prepareTime /= 1.2f;
+        shootTimes += 2;
+        ultShootTime *= 1.2f;
+        ultInterval /= 1.2f;
+        ultPrepareTime /= 1.2f;
+        ultMissileNums += 5;
+    }
 
     public override void PickUp(GunConfig.Type type)
     {
@@ -57,7 +67,7 @@ public class BossShoot : ShootController
     {
         Quaternion originalRotation = gunTransform.rotation;
         float originalDirection = transform.localScale.x;
-        for ( int i = 0; i < 3; i++)
+        for ( int i = 0; i < shootTimes; i++)
         {
             float time = 0f;
             while (time < aimTime)

@@ -6,31 +6,13 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private Transform gunHoldTransform;
     [SerializeField] private PlayerController controller;
 
-    private Vector2 destination, mousePos;
+    private Vector2 destination;
 
     private void Start()
     {
         destination = transform.position;
     }
-    private void Update()
-    {
-        if( controller.isAlive == false)
-        {
-            return;
-        }
-        mousePos = CameraHandler.Instance.ScreenToWorldPoint(Input.mousePosition);
-        Rotate();
-        if ( Input.GetMouseButtonDown(1) )
-        {
-            destination = mousePos;
-        }
-        if (Vector2.Distance(transform.position, destination) > .3f)
-        {
-            Move();
-        }
-    }
-
-    private void Rotate()
+    public void RotateTo(Vector2 mousePos)
     {
         Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;    
@@ -50,8 +32,18 @@ public class PlayerMove : MonoBehaviour
         temp.x *= -1;
         transform.localScale = temp;
     }
-    private void Move()
+    public void MoveTo(Vector2 des)
     {
+        destination = des;
+        Move();
+    }
+
+    public void Move()
+    {
+        if (Vector2.Distance(destination, transform.position) < .3f)
+        {
+            return;
+        }
         Vector2 direction = (destination - (Vector2)transform.position).normalized;
         transform.Translate(speed*Time.deltaTime*direction);   
     }

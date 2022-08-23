@@ -5,8 +5,8 @@ public class Health : MonoBehaviour
     [SerializeField] private int maxHp;
     private int hp;
     [SerializeField] private GameEvent dieEvent;
-    public int MaxHp { get { return maxHp; } private set { value = maxHp; } }
-    public int Hp { get { return hp; } private set { value = hp; } }
+    public int MaxHp { get { return maxHp; } private set { maxHp = value; } }
+    public int Hp { get { return hp; } private set { hp = value; } }
 
     private void Start()
     {
