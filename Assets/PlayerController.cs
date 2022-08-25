@@ -8,10 +8,6 @@ public class PlayerController : MonoBehaviour
 
     private bool isAlive = true;
 
-    private void Start()
-    {
-        shoot.PickUp(GunConfig.Type.pistol);
-    }
     void Update()
     {
         if( isAlive == false)

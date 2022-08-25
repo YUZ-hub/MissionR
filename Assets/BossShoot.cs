@@ -12,6 +12,7 @@ public class BossShoot : ShootController
     [SerializeField] private GameObject ultMissile;
     [SerializeField] private int ultMissileNums;
     [SerializeField] private Sound ultMissileShootSound;
+    [SerializeField] private GameEvent bossPickUp;
 
     public void PowerUp()
     {
@@ -28,11 +29,12 @@ public class BossShoot : ShootController
     {
         base.PickUp(type);
         leftHand.SetActive(false);
+        bossPickUp.Raise();
     }
     public override void Trigger()
     {
         base.Trigger();
-        if( gun.IsEmpty())
+        if( gun!=null && gun.IsEmpty())
         {
             gun.gameObject.SetActive(false);
             leftHand.SetActive(true);
@@ -69,6 +71,10 @@ public class BossShoot : ShootController
         float originalDirection = transform.localScale.x;
         for ( int i = 0; i < shootTimes; i++)
         {
+            if( gun == null || gun.IsEmpty())
+            {
+                break;
+            }
             float time = 0f;
             while (time < aimTime)
             {

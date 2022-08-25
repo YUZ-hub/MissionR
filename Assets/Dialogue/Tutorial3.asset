@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea12105b67673b4c80546b658152d60, type: 3}
+  m_Name: Tutorial3
+  m_EditorClassIdentifier: 
+  sentences:
+  - content: "\u5C0F\u5FC3\u88DC\u7D66\u54C1\u5225\u88AB\u90A3\u53F0\u6A5F\u5668\u4EBA\u64BF\u5230,\u5426\u5247......"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
+  - content: "\u5426\u5247?"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}

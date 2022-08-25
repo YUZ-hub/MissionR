@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea12105b67673b4c80546b658152d60, type: 3}
+  m_Name: Tutorial1
+  m_EditorClassIdentifier: 
+  sentences:
+  - content: "\u9019\u88E1\u7684\u98A8\u666F\u9084\u771F\u4E0D\u932F,\u6709\u82B1,\u6709\u8349......"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
+  - content: "\u6240\u4EE5\u8AAA\u6D3E\u6211\u5230\u9019\u7247\u8352\u5730\u662F\u8981\u505A\u4EC0\u9EBC"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
+  - content: "\u5616\u5616\u5616,\u771F\u662F\u4E00\u9EDE\u90FD\u4E0D\u6D6A\u6F2B"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
+  - content: "(\u8AB0\u8981\u8DDF\u4F60\u641E\u6D6A\u6F2B\u554A"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
+  - content: "\u9019\u6B21\u7684\u4EFB\u52D9\u662F\u6D88\u6EC5\u4E00\u53F0\u6A5F\u5668\u4EBA,\u90A3\u53F0\u6A5F\u5668\u4EBA\u662F\u4E4B\u524D\u6230\u722D\u907A\u7559\u4E0B\u4F86\u7684......(\u4E00\u9023\u4E32\u9577\u5230\u8D85\u51FA\u5C0D\u8A71\u6846\u4F46\u5176\u5BE6\u5B8C\u5168\u4E0D\u91CD\u8981\u7684\u6A5F\u5668\u4EBA\u76F8\u95DC\u8A2D\u5B9A"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
+  - content: "\u7E3D\u4E4B\u5C31\u662F\u6D88\u6EC5\u76EE\u6A19\u5427,\u4F46\u53EA\u5E36\u9019\u9EDE\u5B50\u5F48\u6050\u6015\u4E0D\u5920\u7528"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
+  - content: "\u5225\u64D4\u5FC3,\u76F4\u6607\u6A5F\u6703\u5B9A\u671F\u9001\u4F86\u88DC\u7D66\u54C1,\u5C31\u50CF\u9019\u6A23......"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}

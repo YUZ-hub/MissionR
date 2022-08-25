@@ -5,8 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    [SerializeField] private GameObject winPanel, losePanel;
-    [SerializeField] private int gameSceneIndex;
+    [SerializeField] private int gameSceneIndex, tutorialIndex, menuIndex;
 
     private void Awake()
     {
@@ -22,12 +21,16 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(gameSceneIndex);
     }
-    public void Win()
+    public void StartTutorial()
     {
-        winPanel.SetActive(true);
+        SceneManager.LoadScene(tutorialIndex);
     }
-    public void Lose()
+    public void LoadMenu()
     {
-        losePanel.SetActive(true);
+        SceneManager.LoadScene(menuIndex);
+    }
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

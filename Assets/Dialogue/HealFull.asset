@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - content: "\u91AB\u7642\u5305\u62FF\u53BB\u5427,\u4E0D\u7528\u592A\u611F\u8B1D\u6211"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
   - content: "\u8B1D\u4E86,\u4F46\u6211\u73FE\u5728\u6BD4\u8F03\u9700\u8981\u69CD"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
   isPlayed: 0

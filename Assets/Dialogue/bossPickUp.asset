@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dea12105b67673b4c80546b658152d60, type: 3}
-  m_Name: bossPickUp
+  m_Name: BossPickUp
   m_EditorClassIdentifier: 
   sentences:
   - content: "\u6211\u767C\u8A93\u4F60\u4E00\u5B9A\u662F\u6545\u610F\u628A\u7269\u8CC7\u4E1F\u5230\u4ED6\u8173\u4E0B"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
   - content: "\xAF\\(\u30C4)/\xAF"
-  isPlayed: 1
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
+  isPlayed: 0

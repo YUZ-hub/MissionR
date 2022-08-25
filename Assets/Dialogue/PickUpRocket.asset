@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - content: "\u9019\u500B\u706B\u7BAD\u70AE\u662F\u6211\u89AA\u81EA\u8A2D\u8A08\u7684\u5283\u6642\u4EE3\u6B66\u5668"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
   - content: "\u6709\u4EC0\u9EBC\u7279\u6B8A\u529F\u80FD\u55CE"
-  - content: "\u4F60\u770B\u70AE\u5F48\u982D\uFF0C\u6211\u628A\u4F60\u7684\u6B7B\u9B5A\u773C\u5370\u5728\u4E0A\u9762\u4E86"
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}
+  - content: "\u4F60\u770B\u70AE\u5F48\u982D,\u6211\u628A\u4F60\u7684\u6B7B\u9B5A\u773C\u5370\u5728\u4E0A\u9762\u4E86"
+    speaker: {fileID: 11400000, guid: 53b317063ab24d5498eb476df0e9cacf, type: 2}
   - content: "\u6211\u4E0D\u8A72\u62B1\u6709\u671F\u5F85\u7684"
-  isPlayed: 0
+    speaker: {fileID: 11400000, guid: 9834153fa0c7471498e661d14ceba88e, type: 2}

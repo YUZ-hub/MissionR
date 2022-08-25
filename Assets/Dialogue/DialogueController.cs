@@ -2,44 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI content;
-    [SerializeField] private float playInterval;
+    [SerializeField] private Image speakerImg;
+    [SerializeField] private float intervalPerText;
+    [SerializeField] private GameObject dialogueUI;
 
-    private bool isPlaying = false;
-    private Queue<Dialogue> dialoguePlayQueue = new Queue<Dialogue>();
 
-    private void Update()
+    public static DialogueController Instance { get; private set; }
+    public bool IsPlaying { get; private set; } = false;
+    
+
+    private void Awake()
     {
-        if( dialoguePlayQueue.Count>0 && isPlaying ==false)
+        if (Instance != null)
         {
-            Play(dialoguePlayQueue.Dequeue());
+            Destroy(gameObject);
+            return;
         }
+        Instance = this;
     }
     public void Play(Dialogue dialogue)
     {
-        if (isPlaying)
+        if (IsPlaying==false)
         {
-            dialoguePlayQueue.Enqueue(dialogue);
-        }  
-        else if(dialogue.IsPlayed() == false)
-        {
-            dialogue.SetPlayed();
             StartCoroutine(PlaySequence(dialogue));
-        }
-            
+        }        
     }
     IEnumerator PlaySequence(Dialogue dialogue)
     {
-        isPlaying = true;
+        IsPlaying = true;
+        dialogueUI.SetActive(true);
         for(int i = 0; i < dialogue.Sentences.Length; i++)
         {
             content.text = dialogue.Sentences[i].Content;
-            yield return new WaitForSeconds(playInterval);
+            speakerImg.sprite = dialogue.Sentences[i].Speaker.CharacterSprite;
+            yield return new WaitForSeconds(intervalPerText*dialogue.Sentences[i].Content.Length+1f);
         }
         content.text = string.Empty;
-        isPlaying = false;
+        dialogueUI.SetActive(false);
+        IsPlaying = false;
     }
 }

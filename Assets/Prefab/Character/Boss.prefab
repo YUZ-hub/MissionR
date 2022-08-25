@@ -144,6 +144,7 @@ MonoBehaviour:
   breakTime: 1.5
   detectRange: 10
   smashSound: {fileID: 11400000, guid: 1fcd4fba7cafb924ea568ddcab7753f5, type: 2}
+  health: {fileID: 0}
 --- !u!95 &6150283243109414768
 Animator:
   serializedVersion: 4
@@ -222,6 +223,7 @@ MonoBehaviour:
   ultMissile: {fileID: 5241571217774708462, guid: 40e9720d592994641a8466023f5a2cb6, type: 3}
   ultMissileNums: 10
   ultMissileShootSound: {fileID: 11400000, guid: fa06c53e703260c47a9a0372d908344e, type: 2}
+  bossPickUp: {fileID: 11400000, guid: cd5a5cddbe7509641a1c76cfe280b94e, type: 2}
 --- !u!114 &3668090288653361232
 MonoBehaviour:
   m_ObjectHideFlags: 0
