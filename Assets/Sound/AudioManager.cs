@@ -18,19 +18,24 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         foreach( Sound sound in sounds)
         {
-            sound.source = gameObject.AddComponent<AudioSource>();
-            sound.source.clip = sound.clip;
-            sound.source.volume = setting.Volume;
-            sound.source.pitch = sound.pitch;
-            sound.source.loop = sound.loop;
+            Register(sound);
         }
-        bgm.source.Play();
+        bgm.Play();
+    }
+    public void Register(Sound sound)
+    {
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.clip = sound.Clip;
+        source.volume = sound.Volume*setting.Volume;
+        source.pitch = sound.Pitch;
+        source.loop = sound.Loop;
+        sound.SetSource(source);
     }
     public void SetVolume(float vol)
     {
         foreach(Sound s in sounds)
         {
-            s.source.volume = vol;
+            s.SetVolume(vol);
         }
     }
 }

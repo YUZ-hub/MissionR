@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
     { 
         if(collider.gameObject.TryGetComponent(out Health health))
         {
-            config.HitSound.source.Play();
+            config.HitSound.Play();
             health.TakeDamage(config.Damage);
             CameraHandler.Instance.Shake();
             hitParticle.transform.position = transform.position;

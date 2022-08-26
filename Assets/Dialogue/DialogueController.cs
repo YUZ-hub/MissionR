@@ -27,14 +27,15 @@ public class DialogueController : MonoBehaviour
     }
     public void Play(Dialogue dialogue)
     {
-        if (IsPlaying==false)
+        if (IsPlaying==false&&dialogue.IsPlayed==false)
         {
             StartCoroutine(PlaySequence(dialogue));
-        }        
+        }
     }
     IEnumerator PlaySequence(Dialogue dialogue)
     {
         IsPlaying = true;
+        dialogue.SetPlayed();
         dialogueUI.SetActive(true);
         for(int i = 0; i < dialogue.Sentences.Length; i++)
         {

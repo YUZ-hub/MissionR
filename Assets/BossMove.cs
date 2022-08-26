@@ -24,7 +24,7 @@ public class BossMove : MonoBehaviour
         targetPos -= direction*dashOffset*(Vector2)playerTransform.right;
         transform.position = targetPos;
     }
-    private void Flip()
+    public void Flip()
     {
         Vector3 temp = transform.localScale;
         temp.x *= -1;

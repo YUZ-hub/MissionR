@@ -16,7 +16,7 @@ public class Scope : MonoBehaviour
         }
         ParticleSystem particle = Instantiate(particlePrefab, transform.position, Quaternion.identity);
         particle.Play();
-        explosionSound.source.Play();
+        explosionSound.Play();
         Destroy(gameObject);
     }
 }

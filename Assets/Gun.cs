@@ -42,13 +42,13 @@ public class Gun : MonoBehaviour
         }
         if (IsEmpty())
         {
-            if (config.EmptySound.source.isPlaying == false)
+            if (config.EmptySound.IsPlaying() == false)
             {
-                config.EmptySound.source.Play();
+                config.EmptySound.Play();
             }
             return;
         }
-        config.ShootSound.source.Play();
+        config.ShootSound.Play();
         Bullet bullet = bulletPool.Get();
         bullet.gameObject.transform.position = shootPoint.position;
         bullet.gameObject.transform.rotation = shootPoint.rotation;
@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
     }
     public void Reload()
     {
-        config.ReloadSound.source.Play();
+        config.ReloadSound.Play();
         bulletNum = config.MagazineSize;
         isCD = false;
     }

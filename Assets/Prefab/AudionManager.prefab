@@ -57,5 +57,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f08cdb59c19c08b4392bd8eb78a6d231, type: 2}
   - {fileID: 11400000, guid: ba552019eebbf6240bea453287ec3466, type: 2}
   - {fileID: 11400000, guid: 765e67612828e9e49b1566e37874982a, type: 2}
+  - {fileID: 11400000, guid: 2cd1bd4c2d7454049abb677efb4c34cd, type: 2}
   setting: {fileID: 11400000, guid: 20f537e8bebf62e428867ee80bfbfe05, type: 2}
   bgm: {fileID: 11400000, guid: ba552019eebbf6240bea453287ec3466, type: 2}

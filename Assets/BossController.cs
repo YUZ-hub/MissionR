@@ -17,7 +17,8 @@ public class BossController : MonoBehaviour
     private bool isRage = false;
 
     public BossMove Move { get { return move; } private set { move = value; } }
-    
+    public BossShoot Shoot { get { return shoot; } private set { shoot = value; } }
+
     IEnumerator Start()
     {
         yield return new WaitForSeconds(breakTime);
@@ -45,23 +46,23 @@ public class BossController : MonoBehaviour
             switch (dice)
             {
                 case 0:
-                    move.Patrol();
+                    Move.Patrol();
                     break;
                 case 1:
                     if (shoot.gun != null)
-                        shoot.NormalShoot();
+                        Shoot.NormalShoot();
                     else
                         DashSmite();
                     break;
                 case 2:
-                    if (shoot.gun != null)
-                        shoot.Ultimate();
+                    if (Shoot.gun != null)
+                        Shoot.Ultimate();
                     else
                         DashSmite();
                     break;
                 default:
-                    if (shoot.gun != null)
-                        shoot.NormalShoot();
+                    if (Shoot.gun != null)
+                        Shoot.NormalShoot();
                     else
                         DashSmite();
                     break;
@@ -70,7 +71,7 @@ public class BossController : MonoBehaviour
     }
     private void DashSmite()
     {
-        move.DashToPlayerBack();
+        Move.DashToPlayerBack();
         animator.Play("Smash");
     }
     public void SmiteDamageEvent()
@@ -80,7 +81,7 @@ public class BossController : MonoBehaviour
         {
             health.TakeDamage(40);
         }
-        smashSound.source.Play();
+        smashSound.Play();
         CameraHandler.Instance.Shake();
         SetIdle();
     }
@@ -95,7 +96,7 @@ public class BossController : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, detectRange, supplyLayer);
         if( hit )
         {
-            move.MoveTo(hit.transform);
+            Move.MoveTo(hit.transform);
         }
         else
         {
@@ -113,8 +114,8 @@ public class BossController : MonoBehaviour
     }
     public void OnBossDie()
     {
-        Destroy(move);
-        Destroy(shoot);
+        Destroy(Move);
+        Destroy(Shoot);
         animator.Play("Die");
         Destroy(this);    
     }

@@ -98,6 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63f0833890c2dd47bfbfdefd6a74675, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropOffset: 20
+  dropSound: {fileID: 11400000, guid: 2cd1bd4c2d7454049abb677efb4c34cd, type: 2}
   type: 0
 --- !u!61 &4090222483002279169
 BoxCollider2D:

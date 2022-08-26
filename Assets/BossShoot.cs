@@ -45,19 +45,13 @@ public class BossShoot : ShootController
     {
         StartCoroutine(NormalShootSequence());
     }
-    private void Flip()
-    {
-        Vector3 temp = transform.localScale;
-        temp.x *= -1;
-        transform.localScale = temp;
-    }
     private void Aim()
     {
         Vector2 direction = playerTransform.position - gunTransform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         if (direction.x > 0 ^ transform.localScale.x > 0)
         {
-            Flip();
+            controller.Move.Flip();
         }
         if (direction.x < 0)
         {
@@ -86,7 +80,7 @@ public class BossShoot : ShootController
             Trigger();
             if (originalDirection != transform.localScale.x)
             {
-                Flip();
+                controller.Move.Flip();
             }
         }
         gunTransform.rotation = originalRotation;
@@ -112,7 +106,7 @@ public class BossShoot : ShootController
         transform.position = new Vector2(leftX,playerTransform.position.y);
         if(transform.localScale.x < 0)
         {
-            Flip();
+            controller.Move.Flip();
         }
         Quaternion originalRotation = gunTransform.rotation;
         Aim();
@@ -141,7 +135,7 @@ public class BossShoot : ShootController
         gunTransform.rotation = Quaternion.AngleAxis(-90f, Vector3.forward);
         for( int i = 0; i < ultMissileNums; i++)
         {
-            ultMissileShootSound.source.Play();
+            ultMissileShootSound.Play();
             Instantiate(ultMissile, gun.ShootPoint.position, Quaternion.identity);
             yield return new WaitForSeconds(ultInterval);
         }

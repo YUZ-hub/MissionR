@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,5 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 211bcd6c3dce62c45b1c3c9050c883b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropOffset: 20
+  dropSound: {fileID: 11400000, guid: 2cd1bd4c2d7454049abb677efb4c34cd, type: 2}
+  type: 0
   healParticlePrefab: {fileID: 3425476578700580806, guid: ab897dcd369cfc14c82d3829d0d4cf14, type: 3}
   healSound: {fileID: 11400000, guid: 7d7ca1b09d7e9494984b6746223e67f3, type: 2}

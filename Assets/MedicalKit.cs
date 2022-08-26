@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MedicalKit : MonoBehaviour
+public class MedicalKit : Supply
 {
     [SerializeField] private ParticleSystem healParticlePrefab;
     [SerializeField] private Sound healSound;
@@ -10,17 +10,23 @@ public class MedicalKit : MonoBehaviour
     {
         healParticle = Instantiate(healParticlePrefab);
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ( collision.TryGetComponent(out Health health))
+        OnPickedUpBy(collision);
+    }
+    protected override void OnPickedUpBy(Collider2D collision)
+    {
+        if (collision.TryGetComponent(out Health health))
         {
             health.Heal(.3f);
-            healSound.source.Play();
+            healSound.Play();
             healParticle.transform.position = transform.position;
             healParticle.Play();
             Destroy(gameObject);
         }
+    }
+    private void OnEnable()
+    {
+        StartCoroutine(DropFromTop());
     }
 }
