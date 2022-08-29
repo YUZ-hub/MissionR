@@ -25,6 +25,10 @@ public class Supply : MonoBehaviour
     }
     protected IEnumerator DropFromTop()
     {
+        if (dropOffset == 0)
+        {
+            yield break;
+        }
         Vector2 originalPos = transform.position;
         Vector2 newPos = originalPos;
         newPos.y += dropOffset;

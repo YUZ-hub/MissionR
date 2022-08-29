@@ -14,7 +14,7 @@ public class Dialogue : ScriptableObject
     [SerializeField] private Sentence[] sentences;
     [SerializeField] private bool isPlayed = false;
     public Sentence[] Sentences { get { return sentences; } private set { sentences = value; } }
-    public bool IsPlayed { get { return isPlayed; } private set { IsPlayed = value; } }
+    public bool IsPlayed { get { return isPlayed; } private set { isPlayed = value; } }
 
     public void SetPlayed()
     {

@@ -7747,6 +7747,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2894708104988383298, guid: 47e250e38bd82f74890fbe1fde0600d8, type: 3}
+      propertyPath: dropSound
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2894708104988383298, guid: 47e250e38bd82f74890fbe1fde0600d8, type: 3}
+      propertyPath: dropOffset
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7907417799407032496, guid: 47e250e38bd82f74890fbe1fde0600d8, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -8182,10 +8190,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1357979964, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
-      propertyPath: health
-      value: 
-      objectReference: {fileID: 1956903114}
     - target: {fileID: 355642474673275345, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8234,10 +8238,6 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 189300690}
-    - target: {fileID: 355642474673275351, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
-      propertyPath: maxHp
-      value: 1000
-      objectReference: {fileID: 0}
     - target: {fileID: 355642474673275357, guid: 76fd2d952897e3d41a58bdb7c88a85bf, type: 3}
       propertyPath: m_Name
       value: Boss

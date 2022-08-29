@@ -40,6 +40,7 @@ Transform:
   - {fileID: 2806345373303171483}
   - {fileID: 2595207790203479073}
   - {fileID: 7121939679939435055}
+  - {fileID: 6807190505141502352}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f2a64a8a327db49a1b4dcaa991d664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10
+  maxHp: 1000
   dieEvent: {fileID: 11400000, guid: 351473abee2cbce429bbaf6d43943fe7, type: 2}
 --- !u!114 &1357979964
 MonoBehaviour:
@@ -144,7 +145,7 @@ MonoBehaviour:
   breakTime: 1.5
   detectRange: 10
   smashSound: {fileID: 11400000, guid: 1fcd4fba7cafb924ea568ddcab7753f5, type: 2}
-  health: {fileID: 0}
+  health: {fileID: 355642474673275351}
 --- !u!95 &6150283243109414768
 Animator:
   serializedVersion: 4
@@ -282,6 +283,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7121939679939435055}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1787140780392626254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6807190505141502352}
+  m_Layer: 6
+  m_Name: Particle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6807190505141502352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787140780392626254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 355642474673275345}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2854318414786648639
 GameObject:

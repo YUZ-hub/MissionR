@@ -132,7 +132,7 @@ public class BossShoot : ShootController
     private IEnumerator RocketUlt()
     {
         Quaternion originalRotation = gunTransform.rotation;
-        gunTransform.rotation = Quaternion.AngleAxis(-90f, Vector3.forward);
+        gunTransform.rotation = Quaternion.AngleAxis(transform.localScale.x>0?90f:-90f, Vector3.forward);
         for( int i = 0; i < ultMissileNums; i++)
         {
             ultMissileShootSound.Play();
