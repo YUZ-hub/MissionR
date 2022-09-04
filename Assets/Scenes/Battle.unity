@@ -3031,7 +3031,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 2b1e78719e1a5ae4abf0c977093acfb1, type: 2}
+      - m_Target: {fileID: 11400000, guid: 6179401fde67c3f46b4b91d8abccfc64, type: 2}
         m_TargetAssemblyTypeName: GameEvent, Assembly-CSharp
         m_MethodName: Raise
         m_Mode: 1
