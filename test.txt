@@ -1,2 +1,2 @@
 test file add from master branch
-make some conflict
+try to add new conflict, this time would change both second and master branch
