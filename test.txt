@@ -1,2 +1,2 @@
 test file add from master branch
-add some content from second branch
+make some conflict
